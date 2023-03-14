@@ -5,5 +5,6 @@ export default {
     username: null,
     discriminator: null,
     avatar: null,
-    banner: null
+    banner: null,
+    key: null
 }

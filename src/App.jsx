@@ -10,6 +10,7 @@ import Downloads from "./Pages/Downloads";
 import Imprint from "./Pages/legal/Imprint";
 import Privacy from "./Pages/legal/Privacy";
 import TOS from "./Pages/legal/TOS";
+import NotFound from "./Pages/404";
 
 function App() {
     return (
@@ -27,6 +28,8 @@ function App() {
             <Route path="/legal/tos" element={<TOS />} />
 
             <Route path="/discord" element={<Redirect to="https://discord.gg/VEcR8RbnSH" />} />
+
+            <Route path="*" element={<NotFound />} />
         </Routes>
     );
 }

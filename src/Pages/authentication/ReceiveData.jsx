@@ -1,16 +1,22 @@
 import LoginDataCache from "./LoginDataCache";
 
 export function loadData(token, callback) {
-    httpGetAsync("https://discord.com/api/users/@me", token, (response) => {
+    httpGetAsync("http://localhost:8080/dc/getData", token, (response) => {
         console.info("Received account data to process...")
         const data = JSON.parse(response)
         console.log(data)
-        LoginDataCache.id = data["id"]
+        const id = data["id"]
+        if (id == null || id === "null") {
+            console.warn("Failed to login!")
+            return
+        }
+        LoginDataCache.id = id
         LoginDataCache.username = data["username"]
         LoginDataCache.discriminator = data["discriminator"]
         LoginDataCache.avatar = data["avatar"]
         LoginDataCache.banner = data["banner"]
         LoginDataCache.email = data["email"]
+        LoginDataCache.key = data["key"]
         callback()
     })
 
@@ -22,6 +28,6 @@ export function loadData(token, callback) {
         }
         xmlHttp.open("GET", url, true);
         xmlHttp.setRequestHeader('Authorization', 'Bearer ' + token)
-        xmlHttp.send(null);
+        xmlHttp.send("  ");
     }
 }

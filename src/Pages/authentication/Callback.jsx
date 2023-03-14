@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import {Route, useNavigate, useSearchParams} from "react-router-dom";
-import LoginDataCache from "./LoginDataCache";
 import { loadData } from "./ReceiveData"
 
 function Callback() {
