@@ -37,7 +37,6 @@ function Overview() {
                     <Link to="/discord" className="text-link">Discord Server</Link>
                     <span>{" or check out the "}</span>
                     <Link to="/qa" className="text-link">Q&A</Link>
-                    {renderMC("")}
                 </div>
             </div>
         </div>
