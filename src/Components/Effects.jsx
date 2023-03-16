@@ -1,3 +1,5 @@
+import DOMPurify from "dompurify";
+import React from "react";
 
 export function scrollEffect() {
     window.moveTo(0, 0)
@@ -12,4 +14,10 @@ export function scrollEffect() {
     return () => {
         window.removeEventListener("scroll", scrollEvent)
     }
+}
+
+export function renderMC(input) {
+    return (
+        <div className="mc-like" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(input)}}></div>
+    );
 }

@@ -8,7 +8,6 @@ import {scrollEffect} from "../Components/Effects";
 import ScrollToTop from "../Components/ScrollToTop";
 import ImageButton from "../Components/ImageButton";
 
-
 function Overview() {
     useEffect(scrollEffect);
 
@@ -38,11 +37,14 @@ function Overview() {
                     <Link to="/discord" className="text-link">Discord Server</Link>
                     <span>{" or check out the "}</span>
                     <Link to="/qa" className="text-link">Q&A</Link>
+                    {renderMC("")}
                 </div>
             </div>
         </div>
         <Footer/>
     </>
 }
+
+
 
 export default Overview
