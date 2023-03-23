@@ -25,8 +25,8 @@ function Overview() {
             </div>
             <div className="text-image-box scroller scroller-wait">
                 <ImageButton bg="https://i.imgur.com/USSO1Q5.png" to="/challenges" name="Challenges"/>
-                <ImageButton bg="https://i.imgur.com/USSO1Q5.png" to="/worlds" name="   Worlds   "/>
-                <ImageButton bg="https://i.imgur.com/USSO1Q5.png" to="/timer" name="   Timer   "/>
+                <ImageButton bg="" to="/worlds" name="   Worlds   "/>
+                <ImageButton bg="/images/banner/Timer-Banner.png" to="/timer" name="   Timer   "/>
             </div>
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">

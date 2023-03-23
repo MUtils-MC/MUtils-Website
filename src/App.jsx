@@ -19,7 +19,7 @@ function App() {
             <Route path="/overview" element={<Overview />} />
             <Route path="/challenges" element={<Challenges />} />
             <Route path="/download" element={<Downloads />} />
-            <Route path="/lib/timer" element={<TimerDesigns />} />
+            <Route path="/timer" element={<TimerDesigns />} />
             <Route path="/oauth/login" element={<LogIn />} />
             <Route path="/oauth/callback" element={<Callback />} />
 

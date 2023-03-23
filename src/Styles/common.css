@@ -137,6 +137,10 @@ div .text-block {
     max-width: 15vh;
 }
 
+.box-image.right {
+    order: -1;
+}
+
 .box-text {
     display: block;
     text-align: center;
