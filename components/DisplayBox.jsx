@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
-import "../Styles/popup.css";
-import NotFound from "../Images/mc/grab/barrier.png";
-import Warning from "../Images/question_mark.svg";
+import NotFound from "./Images/mc/grab/barrier.png";
+import Warning from "./Images/question_mark.svg";
 import Tags from "./Variables/Tags";
 import Popup from "reactjs-popup";
 

@@ -1,11 +1,11 @@
-import {scrollEffect} from "../Components/Effects";
-import ScrollToTop from "../Components/ScrollToTop";
-import Navbar from "../Components/Navbar";
-import TopScreen from "../Components/TopScreen";
-import Footer from "../Components/Footer";
+import {scrollEffect} from "../components/Effects";
+import ScrollToTop from "../components/ScrollToTop";
+import Navbar from "../components/Navbar";
+import TopScreen from "../components/TopScreen";
+import Footer from "../components/Footer";
 import {useEffect, useState} from "react";
-import ImageButton, {ImageButtonLink} from "../Components/ImageButton";
-import {Link} from "react-router-dom";
+import ImageButton, {ImageButtonLink} from "../components/ImageButton";
+import Link from "next/link";
 
 function Downloads() {
     useEffect(scrollEffect);
@@ -23,7 +23,7 @@ function Downloads() {
                     </span>
                     <a href="https://www.minecraft.net/en-us/eula" className="text-link" target="_blank">Minecraft's EULA</a>
                     <span>{" and to our "}</span>
-                    <Link to="/legal/tos" className="text-link">Terms of Service</Link>
+                    <Link href="/legal/tos" className="text-link">Terms of Service</Link>
                     <span>{"!"}</span>
                 </div>
                 <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png" />

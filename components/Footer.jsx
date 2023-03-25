@@ -1,15 +1,13 @@
-import "../Styles/common.css"
-
 function footer() {
     const moveTop = () => window.moveTo(0, 0)
 
     return <>
         <div className="page-up">
-            <a href="#" onClick={moveTop}>
+            <a href="components/Components#" onClick={moveTop}>
                 <img className="arrow-up" src="https://i.imgur.com/brFWJQu.png" width="62" sizes="62px"
                      alt="Arrow pointing up"/>
             </a>
-            <a href="#" onClick={moveTop}>
+            <a href="components/Components#" onClick={moveTop}>
                 <img className="arrow-up" src="https://i.imgur.com/brFWJQu.png" width="62" sizes="62px"
                      alt="Arrow pointing up"/>
             </a>

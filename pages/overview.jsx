@@ -1,11 +1,11 @@
-import Navbar from "../Components/Navbar"
-import TopScreen from "../Components/TopScreen"
-import Footer from "../Components/Footer"
-import {Link} from "react-router-dom";
+import Navbar from "../components/Navbar"
+import TopScreen from "../components/TopScreen"
+import Footer from "../components/Footer"
 import React, {useEffect, useState} from "react";
-import {scrollEffect} from "../Components/Effects";
-import ScrollToTop from "../Components/ScrollToTop";
-import ImageButton from "../Components/ImageButton";
+import {scrollEffect} from "../components/Effects";
+import ScrollToTop from "../components/ScrollToTop";
+import ImageButton from "../components/ImageButton";
+import Link from "next/link";
 
 function Overview() {
     useEffect(scrollEffect);
@@ -40,9 +40,9 @@ function Overview() {
                         {"MUtils is splittet into different modules. Click on a logo to learn more about it!"}<br/>
                         {"If you need help to install a module join our "}
                     </span>
-                    <Link to="/discord" className="text-link">Discord Server</Link>
+                    <Link href="/discord" className="text-link">Discord Server</Link>
                     <span>{" or check out the "}</span>
-                    <Link to="/qa" className="text-link">Q&A</Link>
+                    <Link href="/qa" className="text-link">Q&A</Link>
                 </div>
             </div>
         </div>

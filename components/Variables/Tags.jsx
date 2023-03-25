@@ -1,8 +1,8 @@
-import TagController from "../../Images/mc/tags/Controller.svg";
-import TagFree from "../../Images/mc/tags/Checkmark.svg";
-import TagRandom from "../../Images/mc/tags/Dice.svg";
-import TagForce from "../../Images/mc/tags/Chest.svg";
-import TagMultiplayer from "../../Images/mc/tags/Multiplayer.svg";
+import TagController from "../Images/mc/tags/Controller.svg";
+import TagFree from "../Images/mc/tags/Checkmark.svg";
+import TagRandom from "../Images/mc/tags/Dice.svg";
+import TagForce from "../Images/mc/tags/Chest.svg";
+import TagMultiplayer from "../Images/mc/tags/Multiplayer.svg";
 
 export default {
     tags: {
