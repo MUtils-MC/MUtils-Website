@@ -10,6 +10,7 @@ import Downloads from "./Pages/Downloads";
 import Imprint from "./Pages/legal/Imprint";
 import Privacy from "./Pages/legal/Privacy";
 import TOS from "./Pages/legal/TOS";
+import Profile from "./Pages/Profile";
 import NotFound from "./Pages/404";
 import Shop from "./Pages/Shop";
 
@@ -23,6 +24,9 @@ function App() {
             <Route path="/timer" element={<TimerDesigns />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/oauth/login" element={<NotFound />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/lib/timer" element={<TimerDesigns />} />
+            <Route path="/oauth/login" element={<LogIn />} />
             <Route path="/oauth/callback" element={<Callback />} />
 
             <Route path="/legal/imprint" element={<Imprint />} />

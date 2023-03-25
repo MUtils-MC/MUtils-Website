@@ -15,17 +15,19 @@ function DisplayBox(props) {
             const tagData = Tags.tags[it]
             if (tagData == null) {
                 return <div>
-                    <img src={Warning} alt="missing" className="display-tag tooltip" key={it} style={{borderColor:"rgba(96, 138, 255, 1)",backgroundColor:"rgba(96, 138, 255, 0.3)"}}/>
+                    <img src={Warning} alt="missing" className="display-tag tooltip" key={it}
+                         style={{borderColor: "rgba(96, 138, 255, 1)", backgroundColor: "rgba(96, 138, 255, 0.3)"}}/>
                 </div>
             }
             return (
-                <Popup trigger={open => (<img src={tagData.img} alt="tag" className="display-tag tooltip" style={{borderColor:tagData.color}}/>)} key={it}
+                <Popup trigger={open => (<img src={tagData.img} alt="tag" className="display-tag tooltip"
+                                              style={{borderColor: tagData.color}}/>)} key={it}
                        position="right center"
                        on={['hover', 'focus']}
                        closeOnDocumentClick>
                     <span>Tag ⇒ {it}</span>
                 </Popup>
-             )
+            )
         })
     }
 
@@ -55,6 +57,9 @@ function DisplayBox(props) {
                     }
                 }
                 break
+            case "RAW":
+                setImage(props.img)
+                break
             default:
         }
     }, []);
@@ -63,15 +68,21 @@ function DisplayBox(props) {
 
     }}>
         <div className="display-title">{props.name}</div>
-        <div className="display-mid">
-            <div className="display-tags">{getTags()}</div>
-            <img src={image} alt={"Challenge Icon"} className={imageClass}/>
+        <div className="display-mid" style={getTags() === undefined ? {justifyContent: "center"} : {}}>
+            {getTags() === undefined ? "" :
+                <div className="display-tags">{getTags()}</div>
+            }
+            {props.imgType === "RAW" ?
+                image
+                :
+                <img src={image} alt={"Challenge Icon"} className={imageClass}/>
+            }
         </div>
         <Popup trigger={open => (<div className="display-data-box">{getDescription()}</div>)}
                position="top center"
                on={['hover', 'focus']}
                closeOnDocumentClick
-               contentStyle={{textAlign:"center"}}>
+               contentStyle={{textAlign: "center"}}>
             <span>{props.desc}</span>
         </Popup>
 

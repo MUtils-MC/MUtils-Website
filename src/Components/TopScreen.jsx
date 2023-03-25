@@ -1,7 +1,7 @@
 import "../Styles/common.css"
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 
-export default function TopScreen({ title }) {
+export default function TopScreen({title, children}) {
     const [size, setSize] = useState("scale(0.7)");
     const [opacity, setOpacity] = useState("0.1");
     const [filter, setFilter] = useState(null);
@@ -30,11 +30,17 @@ export default function TopScreen({ title }) {
     return <>
         <div>
             <div className="top-logo-box" style={{transform: size, opacity: opacity}}>
-                <div className="top-logo" >MUtils</div>
-                <div className="top-logo" >{title}</div>
+                {title === "RAW" ?
+                    children
+                    :
+                    <>
+                        <div className="top-logo">MUtils</div>
+                        <div className="top-logo">{title}</div>
+                    </>}
             </div>
-            <img src="https://i.imgur.com/J2mdf8T.png" className="top-bg" style={{filter: filter, transform: height}} onLoad={blurOut}  alt="landscape"/>
-            <div className="top-transition" onLoad={() => console.log("click")} />
+            <img src="https://i.imgur.com/J2mdf8T.png" className="top-bg" style={{filter: filter, transform: height}}
+                 onLoad={blurOut} alt="landscape"/>
+            <div className="top-transition" onLoad={() => console.log("click")}/>
         </div>
     </>
 }
