@@ -9,13 +9,6 @@ function DisplayBox(props) {
     const [image, setImage] = useState(NotFound);
     const [imageClass, setImageClass] = useState("display-image");
 
-    function getSettings() {
-        if (props.settings == null || props.settings.isEmpty) return <span>None</span>
-        return props.settings.map(function (it) {
-            return (<span>{it}<br/></span>)
-        })
-    }
-
     function getTags() {
         if (props.tags == null || props.tags.isEmpty) return
         return props.tags.map(function (it) {

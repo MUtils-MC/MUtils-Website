@@ -3,7 +3,6 @@ import {scrollEffect} from "../../Components/Effects";
 import ScrollToTop from "../../Components/ScrollToTop";
 import Navbar from "../../Components/Navbar";
 import TopScreen from "../../Components/TopScreen";
-import MLogo from "../../Images/mutils500.png";
 import Footer from "../../Components/Footer";
 
 function Imprint() {
@@ -19,7 +18,7 @@ function Imprint() {
                     All information provided only are allowed to use for legal or security concerns!<br/>
                     Any abuse of the following information is strictly forbidden and will result in legal actions.
                 </div>
-                <img className="box-image" alt="MUtils Logo" src={MLogo} />
+                <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png" />
             </div>
 
             <div className="text-image-box scroller scroller-wait">

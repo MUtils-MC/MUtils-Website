@@ -3,7 +3,6 @@ import TopScreen from "../Components/TopScreen";
 import Footer from "../Components/Footer";
 import React, {useEffect, useState} from "react";
 import {scrollEffect} from "../Components/Effects"
-import MLogo from "../Images/mutils500.png";
 import DisplayBox from "../Components/DisplayBox";
 import Tags from "../Components/Variables/Tags";
 import Popup from "reactjs-popup";
@@ -75,7 +74,7 @@ function Challenges() {
                     Some modifications can only be used with MUtils Premium but all common challenges from popular
                     plugins are <b>free to use</b>!
                 </div>
-                <img className="box-image" alt="MUtils Logo" src={MLogo}/>
+                <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png"/>
             </div>
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">

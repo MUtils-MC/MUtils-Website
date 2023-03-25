@@ -1,8 +1,6 @@
 import "../Styles/page-main.css"
-import logo from "../Images/mutils500.png"
 import {Link} from "react-router-dom";
 import React, {useEffect, useState} from "react";
-import ScrollToTop from "../Components/ScrollToTop";
 
 
 function Main() {
@@ -29,7 +27,7 @@ function Main() {
             <div className="main-bg" style={{transform: offset + " scale(1.1)"}}/>
             <div className="main-content">
                 <center>
-                    <img src={logo} alt="MUtils Logo" height="135px"/>
+                    <img src="/images/icons/mutils500.png" alt="MUtils Logo" height="135px"/>
                 </center>
                 <div className="text-content">
                     <h1 className="main-header">MUtils Home</h1>

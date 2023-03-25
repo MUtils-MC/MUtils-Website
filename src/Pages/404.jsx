@@ -2,7 +2,6 @@ import {scrollEffect} from "../Components/Effects";
 import ScrollToTop from "../Components/ScrollToTop";
 import Navbar from "../Components/Navbar";
 import TopScreen from "../Components/TopScreen";
-import MLogo from "../Images/mutils500.png";
 import Footer from "../Components/Footer";
 import {useEffect} from "react";
 

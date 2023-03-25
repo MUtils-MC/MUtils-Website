@@ -4,7 +4,6 @@ import {ReactComponent as CraftingTableIcon} from "../Images/crafting-icon.svg"
 import {ReactComponent as WorldCreatorIcon} from "../Images/world-icon.svg"
 import {ReactComponent as ClockIcon} from "../Images/clock.svg"
 import {ReactComponent as DiscordIcon} from "../Images/discord.svg"
-import MLogo from '../Images/mutils500.png'
 
 import React, {useEffect, useRef, useState} from 'react'
 import {Link} from "react-router-dom"
@@ -57,14 +56,14 @@ function Navbar(props) {
         }}>
             <div>
                 <Link to="/">
-                    <img className="navbar-icon" src={MLogo} alt="Logo"/>
+                    <img className="navbar-icon" src="/images/icons/mutils500.png" alt="Logo"/>
                 </Link>
             </div>
             <div>
                 <ul className="navbar-nav">
                     <NavItem title="Overview" to="/overview" current={props.current}/>
                     <NavItem title="Download" to="/download" current={props.current}/>
-                    <NavItem title="Shop" to="/etc" current={props.current}/>
+                    <NavItem title="Premium" to="/shop" current={props.current}/>
                     <NavItem title="Content " iconRight={<ArrowDownIcon/>} current={props.current} highlight={props.highlight} >
                         <DropdownMenu>
                             <DropdownItem leftIcon={<CraftingTableIcon/>} to="/challenges" current={props.current}>Official Challenges</DropdownItem>

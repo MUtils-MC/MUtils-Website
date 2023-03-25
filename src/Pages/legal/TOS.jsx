@@ -3,7 +3,6 @@ import {scrollEffect} from "../../Components/Effects";
 import ScrollToTop from "../../Components/ScrollToTop";
 import Navbar from "../../Components/Navbar";
 import TopScreen from "../../Components/TopScreen";
-import MLogo from "../../Images/mutils500.png";
 import Footer from "../../Components/Footer";
 
 function TOS() {
@@ -19,7 +18,7 @@ function TOS() {
                     By using the MUtils products or API you agree to the following terms of service.<br/>
                     In the following, the term "Minecraft" is equated with the game "Minecraft: Java Edition" and the term "IP" is equated with a IPv4 and IPv6 address. Any content of the MUtils project is only for the game "Minecraft: Java Edition".
                 </div>
-                <img className="box-image" alt="MUtils Logo" src={MLogo} />
+                <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png" />
             </div>
 
             <div className="text-image-box scroller scroller-wait">

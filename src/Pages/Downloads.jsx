@@ -2,7 +2,6 @@ import {scrollEffect} from "../Components/Effects";
 import ScrollToTop from "../Components/ScrollToTop";
 import Navbar from "../Components/Navbar";
 import TopScreen from "../Components/TopScreen";
-import MLogo from "../Images/mutils500.png";
 import Footer from "../Components/Footer";
 import {useEffect, useState} from "react";
 import ImageButton, {ImageButtonLink} from "../Components/ImageButton";
@@ -27,7 +26,7 @@ function Downloads() {
                     <Link to="/legal/tos" className="text-link">Terms of Service</Link>
                     <span>{"!"}</span>
                 </div>
-                <img className="box-image" alt="MUtils Logo" src={MLogo} />
+                <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png" />
             </div>
             <div className="section-header scroller scroller-wait">MChallenges</div>
             <div className="text-image-box scroller scroller-wait">

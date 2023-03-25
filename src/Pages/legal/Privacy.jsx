@@ -3,7 +3,6 @@ import {scrollEffect} from "../../Components/Effects";
 import ScrollToTop from "../../Components/ScrollToTop";
 import Navbar from "../../Components/Navbar";
 import TopScreen from "../../Components/TopScreen";
-import MLogo from "../../Images/mutils500.png";
 import Footer from "../../Components/Footer";
 
 function Privacy() {
@@ -19,7 +18,7 @@ function Privacy() {
                     In this whole document when being referred as "we" or "us", MUtils Project as a whole is meant with everybody responsible.<br/>
                     When referring to "personal data", your discord profile data (including a linked email address) is meant as well as any information you manually share with any of our services.
                 </div>
-                <img className="box-image" alt="MUtils Logo" src={MLogo} />
+                <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png" />
             </div>
 
             <div className="text-image-box scroller scroller-wait">

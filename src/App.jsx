@@ -11,6 +11,7 @@ import Imprint from "./Pages/legal/Imprint";
 import Privacy from "./Pages/legal/Privacy";
 import TOS from "./Pages/legal/TOS";
 import NotFound from "./Pages/404";
+import Shop from "./Pages/Shop";
 
 function App() {
     return (
@@ -20,7 +21,8 @@ function App() {
             <Route path="/challenges" element={<Challenges />} />
             <Route path="/download" element={<Downloads />} />
             <Route path="/timer" element={<TimerDesigns />} />
-            <Route path="/oauth/login" element={<LogIn />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/oauth/login" element={<NotFound />} />
             <Route path="/oauth/callback" element={<Callback />} />
 
             <Route path="/legal/imprint" element={<Imprint />} />
