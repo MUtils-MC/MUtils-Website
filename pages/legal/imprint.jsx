@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import {scrollEffect} from "../../components/Effects";
-import ScrollToTop from "../../components/ScrollToTop";
 import Navbar from "../../components/Navbar";
 import TopScreen from "../../components/TopScreen";
 import Footer from "../../components/Footer";
@@ -9,7 +8,6 @@ function Imprint() {
     useEffect(scrollEffect);
 
     return <>
-        <ScrollToTop />
         <Navbar current="/legal/imprint" />
         <TopScreen title="Imprint"/>
         <div className="main-part">

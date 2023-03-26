@@ -1,5 +1,4 @@
 import {scrollEffect} from "../components/Effects";
-import ScrollToTop from "../components/ScrollToTop";
 import Navbar from "../components/Navbar";
 import TopScreen from "../components/TopScreen";
 import Footer from "../components/Footer";
@@ -9,7 +8,6 @@ function NotFound() {
     useEffect(scrollEffect);
 
     return <>
-        <ScrollToTop />
         <Navbar current="/404" />
         <TopScreen title="404"/>
         <div className="main-part">

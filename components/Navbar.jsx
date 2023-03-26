@@ -5,7 +5,6 @@ import {ReactComponent as ClockIcon} from "./Images/clock.svg"
 import {ReactComponent as DiscordIcon} from "./Images/discord.svg"
 
 import React, {useEffect, useRef, useState} from 'react'
-import ScrollToTop from "./ScrollToTop";
 import LoginDataCache from "./auth/LoginDataCache";
 import {loadData} from "./auth/ReceiveData";
 import Link from "next/link";
@@ -47,7 +46,6 @@ function Navbar(props) {
     }, []);
 
     return <>
-        <ScrollToTop/>
         <nav className="navbar" style={{opacity: opacity}} ref={nav} onPointerEnter={() => {
             setHover(true)
             setHidden(false)
@@ -134,7 +132,7 @@ function NavItem(props) {
                     {props.img && <img className="nav-pb" src={props.img} alt="PB"/>}
                     {props.title}
                     <span>
-                    {props.iconRight === undefined ? "" : props.iconRight} {/*// TODO: fix icon*/}
+                    {props.iconRight === undefined ? "" : props.iconRight}
                 </span>
 
                 </Link>
@@ -147,7 +145,7 @@ function NavItem(props) {
                     {props.img && <img className="nav-pb" src={props.img} alt="PB"/>}
                     {props.title}
                     <span>
-                    {props.iconRight === undefined ? "" : props.iconRight} {/*// TODO: fix icon*/}
+                    {props.iconRight === undefined ? "" : props.iconRight}
                 </span>
 
                 </div>

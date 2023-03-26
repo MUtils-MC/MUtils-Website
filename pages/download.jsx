@@ -1,5 +1,4 @@
 import {scrollEffect} from "../components/Effects";
-import ScrollToTop from "../components/ScrollToTop";
 import Navbar from "../components/Navbar";
 import TopScreen from "../components/TopScreen";
 import Footer from "../components/Footer";
@@ -11,7 +10,6 @@ function Download() {
     useEffect(scrollEffect);
 
     return <>
-        <ScrollToTop />
         <Navbar current="/download" />
         <TopScreen title="Download"/>
         <div className="main-part">

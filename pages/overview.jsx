@@ -1,9 +1,8 @@
 import Navbar from "../components/Navbar"
 import TopScreen from "../components/TopScreen"
 import Footer from "../components/Footer"
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {scrollEffect} from "../components/Effects";
-import ScrollToTop from "../components/ScrollToTop";
 import ImageButton from "../components/ImageButton";
 import Link from "next/link";
 
@@ -11,7 +10,6 @@ function Overview() {
     useEffect(scrollEffect);
 
     return <>
-        <ScrollToTop />
         <Navbar current="/overview" />
         <TopScreen title="Overview"/>
         <div className="main-part">
