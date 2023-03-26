@@ -126,7 +126,7 @@ function NavItem(props) {
     return <>
         <li className="nav-item">
             {props.to ?
-                <Link href={props.to + ""} className={isActive()} onClick={() => {
+                <Link href={props.to + ""} style={{color: "white"}} className={isActive()} onClick={() => {
                     setOpen(!open)
                     if (props.children == null) window.scrollTo(0, 0)
                 }} ref={ref}>
@@ -134,12 +134,12 @@ function NavItem(props) {
                     {props.img && <img className="nav-pb" src={props.img} alt="PB"/>}
                     {props.title}
                     <span>
-                    {props.iconRight === undefined ? "" : "_I_"} {/*// TODO: fix icon*/}
+                    {props.iconRight === undefined ? "" : props.iconRight} {/*// TODO: fix icon*/}
                 </span>
 
                 </Link>
                 :
-                <div className={isActive()} onClick={() => {
+                <div className={isActive()} style={{color: "white"}} onClick={() => {
                     setOpen(!open)
                     if (props.children == null) window.scrollTo(0, 0)
                 }} ref={ref}>
@@ -147,7 +147,7 @@ function NavItem(props) {
                     {props.img && <img className="nav-pb" src={props.img} alt="PB"/>}
                     {props.title}
                     <span>
-                    {props.iconRight === undefined ? "" : "_I_"} {/*// TODO: fix icon*/}
+                    {props.iconRight === undefined ? "" : props.iconRight} {/*// TODO: fix icon*/}
                 </span>
 
                 </div>
