@@ -1,6 +1,6 @@
-import {scrollEffect} from "../Components/Effects";
-import Navbar from "../Components/Navbar";
-import TopScreen from "../Components/TopScreen";
+import {scrollEffect} from "../components/Effects";
+import Navbar from "../components/Navbar";
+import TopScreen from "../components/TopScreen";
 import React, {useEffect} from "react";
 
 function Shop() {

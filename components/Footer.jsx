@@ -1,15 +1,20 @@
-import "../Styles/common.css"
+import {useEffect, useState} from "react";
+import Link from "next/link";
 
 function footer() {
-    const moveTop = () => window.moveTo(0, 0)
+
+    const [moveToTop, setMoveToTop] = useState(null);
+    useEffect(() => {
+        setMoveToTop(() => window.moveTo(0, 0))
+    }, [])
 
     return <>
         <div className="page-up">
-            <a href="#" onClick={moveTop}>
+            <a href="#" onClick={moveToTop}>
                 <img className="arrow-up" src="https://i.imgur.com/brFWJQu.png" width="62" sizes="62px"
                      alt="Arrow pointing up"/>
             </a>
-            <a href="#" onClick={moveTop}>
+            <a href="#" onClick={moveToTop}>
                 <img className="arrow-up" src="https://i.imgur.com/brFWJQu.png" width="62" sizes="62px"
                      alt="Arrow pointing up"/>
             </a>

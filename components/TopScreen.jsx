@@ -1,4 +1,3 @@
-import "../Styles/common.css"
 import {useEffect, useState} from "react";
 
 export default function TopScreen({title, children}) {

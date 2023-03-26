@@ -1,15 +1,13 @@
 import React, {useEffect} from "react";
-import {scrollEffect} from "../../Components/Effects";
-import ScrollToTop from "../../Components/ScrollToTop";
-import Navbar from "../../Components/Navbar";
-import TopScreen from "../../Components/TopScreen";
-import Footer from "../../Components/Footer";
+import {scrollEffect} from "../../components/Effects";
+import Navbar from "../../components/Navbar";
+import TopScreen from "../../components/TopScreen";
+import Footer from "../../components/Footer";
 
 function Imprint() {
     useEffect(scrollEffect);
 
     return <>
-        <ScrollToTop />
         <Navbar current="/legal/imprint" />
         <TopScreen title="Imprint"/>
         <div className="main-part">

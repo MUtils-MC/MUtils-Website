@@ -1,6 +1,6 @@
-import {useEffect, useState} from "react";
-import {Route, useNavigate, useSearchParams} from "react-router-dom";
-import { loadData } from "./ReceiveData"
+import {useEffect} from "react";
+import {useNavigate, useSearchParams} from "react-router-dom"; // TODO: useRouter
+import { loadData } from "../../components/auth/ReceiveData"
 
 function Callback() {
     const [searchParams, setSearchParams] = useSearchParams();

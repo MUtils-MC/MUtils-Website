@@ -1,9 +1,8 @@
-import "../Styles/page-main.css"
-import {Link} from "react-router-dom";
 import React, {useEffect, useState} from "react";
+import Link from "next/link";
 
 
-function Main() {
+function Index() {
     const [offset, setOffset] = useState("translate3d(0, 0, 0)");
 
     useEffect(() => {
@@ -32,21 +31,21 @@ function Main() {
                 <div className="text-content">
                     <h1 className="main-header">MUtils Home</h1>
                     <p className="main-text">Advanced Minecraft modifications for your server and client!</p>
-                    <Link className="main-button" to="/overview">Feature Overview</Link><span> </span>
-                    <Link className="main-button" to="/challenges">Challenge List</Link><span> </span>
-                    <Link className="main-button" to="/discord">Discord Support</Link>
+                    <Link className="main-button" href="/overview">Feature Overview</Link><span> </span>
+                    <Link className="main-button" href="/challenges">Challenge List</Link><span> </span>
+                    <Link className="main-button" href="/discord">Discord Support</Link>
                     <br/>
-                    <Link className="main-button" to="/download">{"< Downloads >"}</Link>
+                    <Link className="main-button" href="/download">{"< Download >"}</Link>
                 </div>
             </div>
             <div className="main-footer">
                 MUtils - Copyright 2022 © All rights reserved<br/>
-                <Link className="footer-link" to="/legal/privacy">Privacy </Link>
+                <Link className="footer-link" href="/legal/privacy">Privacy </Link>
                 -
-                <Link className="footer-link" to="/legal/imprint"> Imprint</Link>
+                <Link className="footer-link" href="/legal/imprint"> Imprint</Link>
             </div>
         </div>
     </>
 }
 
-export default Main;
+export default Index;

@@ -1,15 +1,13 @@
 import React, {useEffect} from "react";
-import {scrollEffect} from "../../Components/Effects";
-import ScrollToTop from "../../Components/ScrollToTop";
-import Navbar from "../../Components/Navbar";
-import TopScreen from "../../Components/TopScreen";
-import Footer from "../../Components/Footer";
+import {scrollEffect} from "../../components/Effects";
+import Navbar from "../../components/Navbar";
+import TopScreen from "../../components/TopScreen";
+import Footer from "../../components/Footer";
 
 function Privacy() {
     useEffect(scrollEffect);
 
     return <>
-        <ScrollToTop />
         <Navbar current="/legal/imprint" />
         <TopScreen title="Privacy"/>
         <div className="main-part">
@@ -363,7 +361,7 @@ function Privacy() {
                           rel="noopener">https://services.google.com/sitestats/de.html</a></p>
                     <p><a href="https://www.google.com/policies/technologies/ads/" target="_blank"
                           rel="noopener">https://www.google.com/policies/technologies/ads/</a>&nbsp;</p>
-                    <p><a href="https://www.google.de/policies/privacy/" target="_blank"
+                    <p><a href="https://www.google.de/policies/privacy/privacy.jsx" target="_blank"
                           rel="noopener">http://www.google.de/policies/privacy/</a></p>
                     <p>in particular information on how you can prevent the use of your data.</p>
                     <h4>Google AdSense</h4>
