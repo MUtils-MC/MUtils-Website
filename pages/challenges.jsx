@@ -1,10 +1,10 @@
-import Navbar from "../Components/Navbar";
-import TopScreen from "../Components/TopScreen";
-import Footer from "../Components/Footer";
+import Navbar from "../components/Navbar";
+import TopScreen from "../components/TopScreen";
+import Footer from "../components/Footer";
 import React, {useEffect, useState} from "react";
-import {scrollEffect} from "../Components/Effects"
-import DisplayBox from "../Components/DisplayBox";
-import Tags from "../Components/Variables/Tags";
+import {scrollEffect} from "../components/Effects"
+import DisplayBox from "../components/DisplayBox";
+import Tags from "../components/Variables/Tags";
 import Popup from "reactjs-popup";
 
 const yaml = require('js-yaml');

@@ -1,15 +1,13 @@
-import '../Styles/navbar.css';
-import {ReactComponent as ArrowDownIcon} from "../Images/carvet.svg"
-import {ReactComponent as CraftingTableIcon} from "../Images/crafting-icon.svg"
-import {ReactComponent as WorldCreatorIcon} from "../Images/world-icon.svg"
-import {ReactComponent as ClockIcon} from "../Images/clock.svg"
-import {ReactComponent as DiscordIcon} from "../Images/discord.svg"
+import {ReactComponent as ArrowDownIcon} from "./Images/carvet.svg"
+import {ReactComponent as CraftingTableIcon} from "./Images/crafting-icon.svg"
+import {ReactComponent as WorldCreatorIcon} from "./Images/world-icon.svg"
+import {ReactComponent as ClockIcon} from "./Images/clock.svg"
+import {ReactComponent as DiscordIcon} from "./Images/discord.svg"
 
 import React, {useEffect, useRef, useState} from 'react'
-import {Link} from "react-router-dom"
-import ScrollToTop from "./ScrollToTop";
-import LoginDataCache from "../Pages/authentication/LoginDataCache";
-import {loadData} from "../Pages/authentication/ReceiveData";
+import LoginDataCache from "./auth/LoginDataCache";
+import {loadData} from "./auth/ReceiveData";
+import Link from "next/link";
 
 function Navbar(props) {
     const nav = useRef()
@@ -30,7 +28,9 @@ function Navbar(props) {
         const token = localStorage.getItem("dc_token")
         if (token != null && token !== "null") {
             if (LoginDataCache.avatar != null) setLoggedIn(true)
-            else loadData(token, () => { setLoggedIn(true) })
+            else loadData(token, () => {
+                setLoggedIn(true)
+            })
         }
 
         const onNavScroll = () => {
@@ -46,7 +46,6 @@ function Navbar(props) {
     }, []);
 
     return <>
-        <ScrollToTop />
         <nav className="navbar" style={{opacity: opacity}} ref={nav} onPointerEnter={() => {
             setHover(true)
             setHidden(false)
@@ -55,7 +54,7 @@ function Navbar(props) {
             if (window.scrollY > 150) setHidden(true)
         }}>
             <div>
-                <Link to="/">
+                <Link href="/">
                     <img className="navbar-icon" src="/images/icons/mutils500.png" alt="Logo"/>
                 </Link>
             </div>
@@ -64,15 +63,21 @@ function Navbar(props) {
                     <NavItem title="Overview" to="/overview" current={props.current}/>
                     <NavItem title="Download" to="/download" current={props.current}/>
                     <NavItem title="Premium" to="/shop" current={props.current}/>
-                    <NavItem title="Content " iconRight={<ArrowDownIcon/>} current={props.current} highlight={props.highlight} >
+                    <NavItem title="Content " iconRight={<ArrowDownIcon/>} current={props.current}
+                             highlight={props.highlight}>
                         <DropdownMenu>
-                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/challenges" current={props.current}>Official Challenges</DropdownItem>
-                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/custom" current={props.current}>Custom Challenges</DropdownItem>
-                            <DropdownItem leftIcon={<ClockIcon/>} to="/timer" current={props.current}>Custom Timer Designs</DropdownItem>
-                            <DropdownItem leftIcon={<WorldCreatorIcon/>} to="/world" current={props.current}>World Presets</DropdownItem>
+                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/challenges" current={props.current}>Official
+                                Challenges</DropdownItem>
+                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/custom" current={props.current}>Custom
+                                Challenges</DropdownItem>
+                            <DropdownItem leftIcon={<ClockIcon/>} to="/timer" current={props.current}>Custom Timer
+                                Designs</DropdownItem>
+                            <DropdownItem leftIcon={<WorldCreatorIcon/>} to="/world" current={props.current}>World
+                                Presets</DropdownItem>
                         </DropdownMenu>
                     </NavItem>
-                    <NavItem title="More " iconRight={<ArrowDownIcon/>} current={props.current} highlight={props.highlight}>
+                    <NavItem title="More " iconRight={<ArrowDownIcon/>} current={props.current}
+                             highlight={props.highlight}>
                         <DropdownMenu>
                             <DropdownItem leftIcon={<DiscordIcon/>} to="/discord">Support</DropdownItem>
                             <DropdownItem leftIcon={<DiscordIcon/>} to="/help">Q&A</DropdownItem>
@@ -80,7 +85,8 @@ function Navbar(props) {
                         </DropdownMenu>
                     </NavItem>
                     {loggedIn &&
-                        <NavItem title="" img={"https://cdn.discordapp.com/avatars/" + LoginDataCache.id + "/" + LoginDataCache.avatar}>
+                        <NavItem title=""
+                                 img={"https://cdn.discordapp.com/avatars/" + LoginDataCache.id + "/" + LoginDataCache.avatar}>
                             <DropdownMenu>
                                 <DropdownItem leftIcon={<DiscordIcon/>} to="/discord">Support</DropdownItem>
                                 <DropdownItem leftIcon={<DiscordIcon/>} to="/help">Q&A</DropdownItem>
@@ -117,15 +123,33 @@ function NavItem(props) {
 
     return <>
         <li className="nav-item">
-            <Link to={props.to} className={isActive()} onClick={() => {
-                setOpen(!open)
-                if (props.children == null) window.scrollTo(0, 0)
-            }} ref={ref}>
-                {props.iconLeft}
-                {props.img && <img className="nav-pb" src={props.img}  alt="PB"/>}
-                {props.title}
-                {props.iconRight}
-            </Link>
+            {props.to ?
+                <Link href={props.to + ""} className={isActive()} onClick={() => {
+                    setOpen(!open)
+                    if (props.children == null) window.scrollTo(0, 0)
+                }} ref={ref}>
+                    {props.iconLeft}
+                    {props.img && <img className="nav-pb" src={props.img} alt="PB"/>}
+                    {props.title}
+                    <span>
+                    {props.iconRight === undefined ? "" : props.iconRight}
+                </span>
+
+                </Link>
+                :
+                <div className={isActive()} onClick={() => {
+                    setOpen(!open)
+                    if (props.children == null) window.scrollTo(0, 0)
+                }} ref={ref}>
+                    {props.iconLeft}
+                    {props.img && <img className="nav-pb" src={props.img} alt="PB"/>}
+                    {props.title}
+                    <span>
+                    {props.iconRight === undefined ? "" : props.iconRight}
+                </span>
+
+                </div>
+            }
 
             {open && props.children}
         </li>
@@ -143,8 +167,9 @@ function DropdownItem(props) {
         if (props.to === props.current) return "menu-item current"
         else return "menu-item"
     }
+
     return <>
-        <Link to={props.to} className={isActive()}>
+        <Link href={props.to} className={isActive()}>
             <span className="icon-button">{props.leftIcon}</span>
             {props.children}
             <span className="icon-right">{props.rightIcon}</span>
