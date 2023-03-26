@@ -35,7 +35,7 @@ function Index() {
                     <Link className="main-button" href="/challenges">Challenge List</Link><span> </span>
                     <Link className="main-button" href="/discord">Discord Support</Link>
                     <br/>
-                    <Link className="main-button" href="/download">{"< Downloads >"}</Link>
+                    <Link className="main-button" href="/download">{"< Download >"}</Link>
                 </div>
             </div>
             <div className="main-footer">

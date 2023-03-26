@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import NotFound from "./Images/mc/grab/barrier.png";
+import NotFound from "../public/images/mc/grab/barrier.png";
 import Warning from "./Images/question_mark.svg";
 import Tags from "./Variables/Tags";
 import Popup from "reactjs-popup";
@@ -43,16 +43,17 @@ function DisplayBox(props) {
                 setImage(props.img)
                 break
             case "RENDER":
-                try { // Try a block render
-                    setImage(require("../Images/mc/grab/rendered/" + props.img + ".png"))
-                } catch (e) {
-                    try { // Try an item render
-                        setImage(require("../Images/mc/grab/items/" + props.img + ".png"))
+                async function imageSetup() {
+                    const res = await fetch("/images/mc/grab/items/" + props.img + ".png")
+                    const ok = res.ok
+                    if (ok) {
+                        setImage("/images/mc/grab/items/" + props.img + ".png")
                         setImageClass("display-image pixel")
-                    } catch (e) { // Fails
-                        console.error("Failed to render image " + props.img + "!")
+                    } else {
+                        setImage("/images/mc/grab/rendered/" + props.img + ".png")
                     }
                 }
+                imageSetup()
                 break
             default:
         }

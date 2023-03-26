@@ -6,7 +6,7 @@
 // import Callback from "../pages/oauth/callback";
 // import LogIn from "../pages/oauth/login";
 // import Timer from "../pages/timer";
-// import Downloads from "../pages/downloads";
+// import Download from "../pages/downloads";
 // import Imprint from "../pages/legal/Imprint";
 // import Privacy from "../pages/legal/Privacy";
 // import Tos from "../pages/legal/Tos";
@@ -19,7 +19,7 @@
 //             <Route path="/" element={<Index />} />
 //             <Route path="/overview" element={<Overview />} />
 //             <Route path="/challenges" element={<Challenges />} />
-//             <Route path="/download" element={<Downloads />} />
+//             <Route path="/download" element={<Download />} />
 //             <Route path="/timer" element={<Timer />} />
 //             <Route path="/shop" element={<Shop />} />
 //             <Route path="/oauth/login" element={<NotFound />} />

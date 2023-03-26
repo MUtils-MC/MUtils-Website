@@ -7,13 +7,13 @@ import {useEffect, useState} from "react";
 import ImageButton, {ImageButtonLink} from "../components/ImageButton";
 import Link from "next/link";
 
-function Downloads() {
+function Download() {
     useEffect(scrollEffect);
 
     return <>
         <ScrollToTop />
         <Navbar current="/download" />
-        <TopScreen title="Downloads"/>
+        <TopScreen title="Download"/>
         <div className="main-part">
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
@@ -48,4 +48,4 @@ function Downloads() {
     </>
 }
 
-export default Downloads
+export default Download

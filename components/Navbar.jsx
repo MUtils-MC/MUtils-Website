@@ -126,7 +126,7 @@ function NavItem(props) {
     return <>
         <li className="nav-item">
             {props.to ?
-                <Link href={props.to + ""} style={{color: "white"}} className={isActive()} onClick={() => {
+                <Link href={props.to + ""} className={isActive()} onClick={() => {
                     setOpen(!open)
                     if (props.children == null) window.scrollTo(0, 0)
                 }} ref={ref}>
@@ -139,7 +139,7 @@ function NavItem(props) {
 
                 </Link>
                 :
-                <div className={isActive()} style={{color: "white"}} onClick={() => {
+                <div className={isActive()} onClick={() => {
                     setOpen(!open)
                     if (props.children == null) window.scrollTo(0, 0)
                 }} ref={ref}>
