@@ -1,7 +1,7 @@
 import React from 'react';
 import DisplayBox from "../DisplayBox";
 
-const StyleList = ({colors}: { colors: { availableStyles: {}[] } }) => {
+const StyleList = ({colors}) => {
     return (
         <>
             <h2 style={{color: "snow", fontWeight: "bold", fontSize: "2em", padding: "2rem"}}>MUtils Styles</h2>

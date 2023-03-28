@@ -1,13 +1,11 @@
-import "../Styles/profile.css"
 import {scrollEffect} from "../Components/Effects";
-import ScrollToTop from "../Components/ScrollToTop";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import React, {useEffect, useState} from "react";
-import LoginDataCache from "../Pages/authentication/LoginDataCache";
-import {loadData} from "./authentication/ReceiveData";
 import StyleList from "../Components/profile/StyleList";
 import TopScreen from "../Components/TopScreen";
+import {loadData} from "../components/auth/ReceiveData";
+import LoginDataCache from "../components/auth/LoginDataCache";
 
 
 function Downloads() {
@@ -56,7 +54,6 @@ function Downloads() {
     }
 
     return <>
-        <ScrollToTop/>
         <Navbar current="/profile"/>
         <TopScreen title="RAW">
             <div className="profile-hero-section">
