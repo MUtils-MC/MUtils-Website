@@ -8,6 +8,8 @@
     "crypto-js": "^4.1.1",
     "dompurify": "^3.0.1",
     "framer-motion": "^8.0.1",
+    "html-react-parser": "^3.0.15",
+    "interweave": "^13.1.0",
     "js-yaml": "^4.1.0",
     "minecraft-blocks-render": "^1.0.1",
     "next": "latest",

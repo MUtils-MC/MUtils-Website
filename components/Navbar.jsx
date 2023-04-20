@@ -8,6 +8,7 @@ import React, {useEffect, useRef, useState} from 'react'
 import LoginDataCache from "./auth/LoginDataCache";
 import {loadData} from "./auth/ReceiveData";
 import Link from "next/link";
+import Head from "next/head";
 
 function Navbar(props) {
     const nav = useRef()

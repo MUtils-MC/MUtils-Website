@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 
 function Index() {
@@ -22,6 +23,9 @@ function Index() {
     }, []);
 
     return <>
+        <Head>
+            <title>MUtils</title>
+        </Head>
         <div className="main-container">
             <div className="main-bg" style={{transform: offset + " scale(1.1)"}}/>
             <div className="main-content">
