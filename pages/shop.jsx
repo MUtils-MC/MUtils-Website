@@ -22,4 +22,8 @@ function Shop() {
     </>
 }
 
+function ShopItem(props) {
+    
+}
+
 export default Shop
