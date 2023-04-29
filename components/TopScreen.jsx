@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+import Head from "next/head";
 
 export default function TopScreen({title, children}) {
     const [size, setSize] = useState("scale(0.7)");
@@ -27,6 +28,9 @@ export default function TopScreen({title, children}) {
     }, [])
 
     return <>
+        <Head>
+            <title>{"MUtils " + title}</title>
+        </Head>
         <div>
             <div className="top-logo-box" style={{transform: size, opacity: opacity}}>
                 {title === "RAW" ?

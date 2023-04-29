@@ -1,13 +1,14 @@
-import {ReactComponent as ArrowDownIcon} from "./Images/carvet.svg"
-import {ReactComponent as CraftingTableIcon} from "./Images/crafting-icon.svg"
-import {ReactComponent as WorldCreatorIcon} from "./Images/world-icon.svg"
-import {ReactComponent as ClockIcon} from "./Images/clock.svg"
-import {ReactComponent as DiscordIcon} from "./Images/discord.svg"
+import ArrowDownIcon from "./Images/carvet.svg"
+import CraftingTableIcon from "./Images/crafting-icon.svg"
+import WorldCreatorIcon from "./Images/world-icon.svg"
+import ClockIcon from "./Images/clock.svg"
+import DiscordIcon from "./Images/discord.svg"
 
 import React, {useEffect, useRef, useState} from 'react'
 import LoginDataCache from "./auth/LoginDataCache";
 import {loadData} from "./auth/ReceiveData";
 import Link from "next/link";
+import Head from "next/head";
 
 function Navbar(props) {
     const nav = useRef()

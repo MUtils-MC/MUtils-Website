@@ -1,10 +1,11 @@
-FROM node:14-alpine AS builder
-WORKDIR /app
-COPY package.json ./
-COPY yarn.lock ./
-RUN npm install --frozen-lockfile
-COPY . .
-RUN npm build
+FROM node:latest
 
-FROM nginx:1.19-alpine AS server
-COPY --from=builder ./app/build /usr/share/nginx/html
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+RUN npm run build
+
+# production environment
+CMD ["npm", "run", "start"]

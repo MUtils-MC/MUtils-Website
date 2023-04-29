@@ -23,8 +23,20 @@ export function ImageButtonLink(props) {
     const onLeave = () => {
         setBg("linear-gradient(45deg, rgba(0,0,0,75%), black), url(\""+ props.bg +"\")")
     }
+    function getTarget() {
+        if (props.target === "_blank") return "noopener noreferrer"
+        else return ""
+    }
 
-    return <a className="image-button" href={props.to} style={{backgroundImage: bg}} onPointerEnter={onEnter} onPointerLeave={onLeave} onLoad={() => { window.moveTo(0,0) }} >
+    return <a className="image-button"
+              target={props.target}
+              rel={getTarget()}
+              href={props.to}
+              style={{backgroundImage: bg}}
+              onPointerEnter={onEnter}
+              onPointerLeave={onLeave}
+              onLoad={() => { window.moveTo(0,0) }}
+    >
         {props.name}
     </a>
 }
