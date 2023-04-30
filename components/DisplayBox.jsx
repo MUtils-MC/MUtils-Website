@@ -73,7 +73,7 @@ function DisplayBox(props) {
                 <div className="display-tags">{getTags()}</div>
             }
             {props.imgType === "RAW" ?
-                image
+                props.img
                 :
                 <img src={image} alt={"Challenge Icon"} className={imageClass}/>
             }

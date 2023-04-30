@@ -6,11 +6,15 @@ import StyleList from "../Components/profile/StyleList";
 import TopScreen from "../Components/TopScreen";
 import {loadData} from "../components/auth/ReceiveData";
 import LoginDataCache from "../components/auth/LoginDataCache";
+import ProfileManager from "../components/profile/ProfileManager";
 
 
 function Downloads() {
 
     const [loggedIn, setLoggedIn] = useState(undefined);
+
+    const [profileManager, setProfileManager] = useState(undefined);
+    const [styles, setStyles] = useState({});
 
 
     useEffect(() => {
@@ -23,59 +27,70 @@ function Downloads() {
         } else {
             setLoggedIn(false)
         }
-
     }, []);
+
+    useEffect(() => {
+        if (loggedIn) {
+            if (LoginDataCache.id === null) {
+                return
+            }
+            setProfileManager(new ProfileManager("YOUR_MUTILS_KEY_GOES_HERE", LoginDataCache.id))
+        }
+    }, [loggedIn]);
+
+    useEffect(() => {
+        if (profileManager === undefined) return
+
+        fetchStyles()
+    }, [profileManager]);
 
     useEffect(scrollEffect);
 
-    async function getConnection(dcID) {
-        let res = await fetch("localhost:8080/account/color/get", {
-            headers: {
-                "User-Agent": "",
-                "key": "lkSn7-894tv-69xXl",
-                "id": dcID,
-            }
-        })
-        let data = await res.json()
-        return data
+    async function fetchStyles() {
+        const styles = await profileManager.getStyles()
+        setStyles(styles)
     }
 
-    function loader(children) {
+    async function setStyle(type) {
+        const styles = await profileManager.setStyle(type)
+        fetchStyles()
+
+    }
+
+    function loader(value, children) {
         return (
-            loggedIn ?
+            value ?
                 children
                 :
-                loggedIn == undefined ?
-                    <h1 style={{color: "white"}}>Lädt...</h1>
+                value == undefined ?
+                    <h1 style={{color: "white"}}>Loading...</h1>
                     :
-                    <h1 style={{color: "white"}}>Bitte melde dich in</h1>
+                    <h1 style={{color: "white"}}>Please log in</h1>
         )
-
     }
 
     return <>
         <Navbar current="/profile"/>
         <TopScreen title="RAW">
             <div className="profile-hero-section">
-                {loader(
+                {loader(loggedIn,
                     <>
                         <img className="profile-image"
                              src={"https://cdn.discordapp.com/avatars/" + LoginDataCache.id + "/" + LoginDataCache.avatar}/>
 
-                        <h1 style={{color: "white", fontSize: "2.5rem"}}>Willkommen, {LoginDataCache.username}</h1>
+                        <h1 style={{color: "white", fontSize: "2.5rem"}}>Welcome, {LoginDataCache.username}</h1>
                     </>
                 )}
             </div>
 
         </TopScreen>
 
-
         <div className="main-part">
 
             <div className="profile-section">
-                {loader(
+                {loader(styles.availableStyles,
                     <>
-                        <StyleList colors={getConnection(LoginDataCache.id)}/>
+                        <StyleList colors={styles} onSelect={(i) => setStyle(i)}/>
                     </>)
                 }
             </div>
