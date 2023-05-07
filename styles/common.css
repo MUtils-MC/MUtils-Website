@@ -318,7 +318,7 @@ div .text-block {
     text-align: center;
     border-radius: 15px;
     /*border: 2px solid #17171a;*/
-    width: 250px;
+    width: 300px;
     box-shadow: 5px 5px 11px 6px #17171a;
     background-color: #242526;
     overflow: hidden;
@@ -347,8 +347,11 @@ div .text-block {
 }
 
 .shop-item-perk {
+    display: flex;
     text-align: start;
     color: snow;
+    margin-top: 1rem;
+    align-items: center;
 }
 
 .shop-item-indicator {
