@@ -7,6 +7,8 @@ import TopScreen from "../Components/TopScreen";
 import {loadData} from "../components/auth/ReceiveData";
 import LoginDataCache from "../components/auth/LoginDataCache";
 import ProfileManager from "../components/profile/ProfileManager";
+import ConnectionList from "../components/profile/ConnectionList";
+import AccountInfo from "../components/profile/AccountInfo";
 
 
 function Downloads() {
@@ -15,6 +17,8 @@ function Downloads() {
 
     const [profileManager, setProfileManager] = useState(undefined);
     const [styles, setStyles] = useState({});
+    const [connections, setConnections] = useState({});
+    const [accountInfo, setAccountInfo] = useState({});
 
 
     useEffect(() => {
@@ -34,7 +38,7 @@ function Downloads() {
             if (LoginDataCache.id === null) {
                 return
             }
-            setProfileManager(new ProfileManager("YOUR_MUTILS_KEY_GOES_HERE", LoginDataCache.id))
+            setProfileManager(new ProfileManager("lkSn7-894tv-69xXl", LoginDataCache.id))
         }
     }, [loggedIn]);
 
@@ -42,19 +46,32 @@ function Downloads() {
         if (profileManager === undefined) return
 
         fetchStyles()
+        fetchConnections()
+        fetchAccountInfo()
     }, [profileManager]);
 
     useEffect(scrollEffect);
 
-    async function fetchStyles() {
-        const styles = await profileManager.getStyles()
-        setStyles(styles)
-    }
-
     async function setStyle(type) {
         const styles = await profileManager.setStyle(type)
         fetchStyles()
+    }
 
+    async function fetchStyles() {
+        const fetchedStyles = await profileManager.getStyles()
+        setStyles(fetchedStyles)
+    }
+
+    async function fetchConnections() {
+        const fetchedConnections = await profileManager.getConnections()
+        setConnections(fetchedConnections)
+        console.log(fetchedConnections)
+    }
+
+    async function fetchAccountInfo() {
+        const fetchedAccountInfo = await profileManager.getAccountInfo()
+        setAccountInfo(fetchedAccountInfo)
+        console.log(fetchedAccountInfo)
     }
 
     function loader(value, children) {
@@ -82,17 +99,20 @@ function Downloads() {
                     </>
                 )}
             </div>
-
         </TopScreen>
 
         <div className="main-part">
 
             <div className="profile-section">
+                {loader(accountInfo.key,
+                    <AccountInfo accountInfo={accountInfo}/>
+                )}
+                {loader(connections[0],
+                    <ConnectionList connections={connections}/>
+                )}
                 {loader(styles.availableStyles,
-                    <>
-                        <StyleList colors={styles} onSelect={(i) => setStyle(i)}/>
-                    </>)
-                }
+                    <StyleList colors={styles} onSelect={(i) => setStyle(i)}/>
+                )}
             </div>
         </div>
         <Footer/>

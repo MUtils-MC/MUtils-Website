@@ -14,18 +14,15 @@ const StyleList = ({colors, onSelect}) => {
 
     return (
         <>
-            <h2 style={{color: "snow", fontWeight: "bold", fontSize: "2em", padding: "2rem"}}>MUtils Styles</h2>
+            <h2 style={{color: "snow", fontWeight: "bold", fontSize: "2rem", padding: "2rem"}}>MUtils Styles</h2>
             <div className="display-grid" style={{width: "100%"}}>
                 {colors.availableStyles.map(i =>
                     <div className={colors.selected === i.type ? "selected-style" : ""}
                          onClick={() => onSelect(i.type)}>
                         <DisplayBox
+                            key={i.type}
                             name={i.name} desc={i.desc} tags={null}
-                            version={"1.19"} key={i.type}
-                            imgType={"RAW"}
-                            img={
-                                getImg(i)
-                            }
+                            imgType={"RAW"} img={getImg(i)}
                         />
                     </div>
                 )}

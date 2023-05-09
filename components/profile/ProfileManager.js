@@ -29,4 +29,22 @@ export default class ProfileManager {
             headers: {...this.getHeaders(), "NewType": type},
         })
     }
+
+
+    async getAccountInfo() {
+        let res = await fetch("http://localhost:8080/account/general", {
+            headers: this.getHeaders()
+        })
+        let data = await res.json()
+        return data
+    }
+
+    async getConnections() {
+        let res = await fetch("http://localhost:8080/account/connections/get", {
+            headers: this.getHeaders()
+        })
+        let data = await res.json()
+        return data
+    }
+
 }
