@@ -57,7 +57,7 @@
     text-align: left;
 }
 
-.account-info button{
+.account-info button {
     font-weight: bold;
     font-size: 12px;
     margin: .1rem .5rem .1rem .5rem;
@@ -68,7 +68,7 @@
     padding: 0 .4rem 0 .4rem;
 }
 
-.account-info button:hover{
+.account-info button:hover {
     color: #68B85D;
 }
 
@@ -106,6 +106,24 @@
     box-shadow: 5px 5px 11px 6px #17171a;
 
     margin-bottom: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connection-card-button {
+    height: 3.5rem;
+    width: 3.5rem;
+    border: none;
+    border-radius: 12px;
+    background-color: transparent;
+    color: snow;
+    font-size: 1.25rem;
+}
+
+.connection-card-button:hover {
+    background-color: #474a4d;
 }
 
 .connection-card h2 {
