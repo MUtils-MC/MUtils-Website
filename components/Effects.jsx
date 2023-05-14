@@ -11,6 +11,7 @@ export function scrollEffect() {
         }
     }
     window.addEventListener("scroll", scrollEvent)
+    scrollEvent()
     return () => {
         window.removeEventListener("scroll", scrollEvent)
     }
