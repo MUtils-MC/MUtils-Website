@@ -2,6 +2,7 @@
   {
     "name": "Example Addon",
     "description": "This addon is an example to display it on the website",
+    "image": "https://i.imgur.com/xe2N5eF.png",
     "authors": [
       "Miraculixx",
       "Anton"
