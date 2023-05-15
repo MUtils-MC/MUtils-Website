@@ -24,5 +24,47 @@
       "cf": "https://legacy.curseforge.com/minecraft/bukkit-plugins/mtimer",
       "github": "https://github.com/MUtils-MC/MUtils"
     }
+  },
+
+  {
+    "name": "Crash on damage",
+    "description": "This addon adds one challenge that crashes everyone's client on any damage if enabled. WARNING - This crashes/closes your minecraft client (no lag)",
+    "image": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3b/Anvil_(N)_JE3.png/",
+    "loader": "Paper",
+    "banner": null,
+    "authors": [
+      "Mooziii"
+    ],
+    "version": {
+      "from": "1.18",
+      "to": "1.19.4"
+    },
+    "tags": [
+      "CURSED"
+    ],
+    "downloads": {
+      "github": "https://github.com/mooziii/MUtils-DamageCrash/releases/"
+    }
+  },
+
+  {
+    "name": "Effect on damage",
+    "description": "This addon adds one challenge that applies a random effect to the player on any damage. Effects start on level 1 and rise on each duplication",
+    "image": "",
+    "loader": "Paper",
+    "banner": null,
+    "authors": [
+      "DasPhiller"
+    ],
+    "version": {
+      "from": "1.18",
+      "to": "1.19.4"
+    },
+    "tags": [
+      "RANDOMIZER"
+    ],
+    "downloads": {
+      "github": "https://github.com/DasPhiller/damagerandomeffect-addon/releases"
+    }
   }
 ]
