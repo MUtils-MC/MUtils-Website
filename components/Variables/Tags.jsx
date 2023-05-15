@@ -8,5 +8,7 @@ export default {
         "RANDOMIZER": { "color":"rgba(255,0,228,1)", "img":"/images/tags/Dice.svg" },
         "FORCE": { "color":"rgba(81,227,78,1)", "img":"/images/tags/Chest.svg" },
         "MULTIPLAYER": { "color":"rgba(240,96,100,1)", "img":"/images/tags/Multiplayer.svg" },
+        "CURSED": { "color":"rgb(89,227,44)", "img":"/images/tags/bug.svg" },
+        "WORLD": { "color":"rgb(26,80,206)", "img":"/images/tags/earth.svg"}
     }
 }

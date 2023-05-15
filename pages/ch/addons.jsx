@@ -1,13 +1,42 @@
 import Navbar from "../../components/Navbar";
 import TopScreen from "../../components/TopScreen";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Footer from "../../components/Footer";
 import {scrollEffect} from "../../components/Effects";
+import {httpGetAsync} from "../../components/WebAccess";
+import DisplayBox from "../../components/DisplayBox";
+import AddonBox from "../../components/AddonBox";
 
-
+const addonsData = "https://raw.githubusercontent.com/MUtils-MC/MUtils-Website/master/custom-data/mchallenge-addons.json"
 
 function Addons() {
+    const [addonsPanel, setAddonsPanel] = useState([])
     useEffect(scrollEffect)
+
+    useEffect(() => {
+        httpGetAsync(addonsData, (body) => {
+            setAddonsPanel(JSON.parse(body))
+            console.log(JSON.parse(body))
+        })
+    }, [])
+
+    function generateAddonPanels(data) {
+        if (!data) {
+            return (<DisplayBox/>)
+        }
+        return data.map((addon) => {
+            const name = addon["name"] || "Unknown Name"
+            const desc = addon["description"] || "Unknown Description"
+            const image = addon["image"] || ""
+            const tags = addon["tags"] || []
+            const version = addon["version"] || {"from": "1.18", "to": "1.19.4"}
+            const authors = addon["authors"] || "Unknown"
+
+            return (<AddonBox name={name} desc={desc} tags={tags} authors={authors} downloads={addon["downloads"]}
+                                version={version} img={image} loader={"Paper"}/>)
+        })
+    }
+
 
     return <>
         <Navbar current="/ch/addons" highlight="Content "/>
@@ -23,6 +52,9 @@ function Addons() {
                     <span>. Using addons come with no warranty to work like expected!</span>
                 </div>
                 <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png"/>
+            </div>
+            <div className="display-grid">
+                {generateAddonPanels(addonsPanel)}
             </div>
         </div>
         <Footer/>

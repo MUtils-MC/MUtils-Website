@@ -6,6 +6,7 @@ import {scrollEffect} from "../components/Effects"
 import DisplayBox from "../components/DisplayBox";
 import Tags from "../components/Variables/Tags";
 import Popup from "reactjs-popup";
+import {httpGetAsync} from "../components/WebAccess";
 
 const yaml = require('js-yaml');
 const dataUrl = "https://raw.githubusercontent.com/MiraculixxT/MUtils/master/challenges/data/challenges.json"
@@ -98,18 +99,6 @@ function Tag(prop) {
                   contentStyle={{textAlign:"center"}}>
         <span >Tag ⇒ {prop.name}</span>
     </Popup>
-}
-
-function httpGetAsync(url, callback) {
-    const xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function () {
-        if (xmlHttp.readyState === 4 && xmlHttp.status === 200)
-            callback(xmlHttp.responseText);
-    }
-    xmlHttp.open("GET", url, true);
-    // xmlHttp.setRequestHeader("User-Agent", "MUtils-API-1.1")
-    // xmlHttp.setRequestHeader("MType", "lib/get/pub/timer")
-    xmlHttp.send(null);
 }
 
 export default Challenges;
