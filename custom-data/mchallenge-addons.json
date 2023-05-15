@@ -50,7 +50,7 @@
   {
     "name": "Effect on damage",
     "description": "This addon adds one challenge that applies a random effect to the player on any damage. Effects start on level 1 and rise on each duplication",
-    "image": "",
+    "image": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/75/Water_Bottle_JE2_BE2.png",
     "loader": "Paper",
     "banner": null,
     "authors": [

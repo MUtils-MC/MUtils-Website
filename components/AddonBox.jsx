@@ -118,7 +118,9 @@ function DisplayBox(props) {
         {close => (<div className="addon-popup">
                 <button className="close" onClick={close}>&times;</button>
                 <div className="banner" style={{backgroundColor: getBannerColor()}}/>
-                <img className="logo" src={props.img} alt="Addon Logo"/>
+                <img className="logo" src={image} alt="Addon Logo" onError={(element) => {
+                    setImage("/images/mc/grab/barrier.png")
+                }}/>
                 <div className="loader">
                     <img src={getLoaderImg()} alt={props.loader} className="loader-icon"/>
                     <span>{props.loader}</span>
