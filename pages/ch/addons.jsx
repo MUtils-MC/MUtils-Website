@@ -33,7 +33,7 @@ function Addons() {
             const authors = addon["authors"] || "Unknown"
 
             return (<AddonBox name={name} desc={desc} tags={tags} authors={authors} downloads={addon["downloads"]}
-                                version={version} img={image} loader={"Paper"}/>)
+                                version={version} img={image} loader={"Paper"} banner={addon["banner"]}/>)
         })
     }
 
@@ -49,7 +49,7 @@ function Addons() {
                     <a href="https://github.com/MUtils-MC/MChallenge-Addon" className="text-link" target="_blank">MChallenge API template</a>
                     <span> and open a ticket on our </span>
                     <a href="https://dc.mutils.net" className="text-link" target="_blank">Discord server</a>
-                    <span>. Using addons come with no warranty to work like expected!</span>
+                    <span> to submit it. Using addons come with no warranty to work like expected!</span>
                 </div>
                 <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png"/>
             </div>

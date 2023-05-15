@@ -54,8 +54,8 @@ function DisplayBox(props) {
     }
 
     function getBannerColor() {
-        if (props.banner == null) return "#F25956"
-        return "#" + props.banner
+        if (props.banner == null) return "#18b800"
+        return props.banner
     }
 
     function fancyString(input) {
