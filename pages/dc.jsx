@@ -2,7 +2,7 @@ import {useEffect} from "react";
 
 function DiscordRedirect() {
     useEffect(() => {
-        window.location.replace('https://dc.mutils.de');
+        window.location.replace('https://dc.mutils.net');
     })
 }
 

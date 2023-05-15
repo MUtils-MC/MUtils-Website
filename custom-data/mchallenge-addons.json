@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Example Addon",
+    "description": "This addon is an example to display it on the website",
+    "authors": [
+      "Miraculixx",
+      "Anton"
+    ],
+    "platform": "PAPER",
+    "version": {
+      "from": "1.18",
+      "to": "1.19.4"
+    },
+    "tags": [
+      "CURSED",
+      "MULTIPLAYER",
+      "RANDOMIZER",
+      "WORLD"
+    ]
+  }
+
+]
