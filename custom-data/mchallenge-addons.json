@@ -4,6 +4,7 @@
     "description": "This addon is an example to display it on the website. To test a very lengthy description, i write some more words to fill the space",
     "image": "https://i.imgur.com/xe2N5eF.png",
     "loader": "Paper",
+    "banner": "#123456",
     "authors": [
       "Miraculixx",
       "Anton"
@@ -17,7 +18,11 @@
       "MULTIPLAYER",
       "RANDOMIZER",
       "WORLD"
-    ]
+    ],
+    "downloads": {
+      "modrinth": "https://modrinth.com/plugin/timer",
+      "cf": "https://legacy.curseforge.com/minecraft/bukkit-plugins/mtimer",
+      "github": "https://github.com/MUtils-MC/MUtils"
+    }
   }
-
 ]
