@@ -8,7 +8,6 @@ import React, {useEffect, useRef, useState} from 'react'
 import LoginDataCache from "./auth/LoginDataCache";
 import {loadData} from "./auth/ReceiveData";
 import Link from "next/link";
-import Head from "next/head";
 
 function Navbar(props) {
     const nav = useRef()
@@ -67,7 +66,7 @@ function Navbar(props) {
                     <NavItem title="Content " iconRight={<ArrowDownIcon/>} current={props.current}
                              highlight={props.highlight}>
                         <DropdownMenu>
-                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/challenges" current={props.current}>Official
+                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/ch/info" current={props.current}>Official
                                 Challenges</DropdownItem>
                             <DropdownItem leftIcon={<CraftingTableIcon/>} to="/custom" current={props.current}>Custom
                                 Challenges</DropdownItem>

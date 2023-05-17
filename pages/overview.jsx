@@ -32,7 +32,7 @@ function Overview() {
                 <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png" />
             </div>
             <div className="display-grid scroller scroller-wait">
-                <ImageButton bg="https://i.imgur.com/USSO1Q5.png" to="/challenges" name="Challenges"/>
+                <ImageButton bg="/images/banner/challenge-banner.webp" to="/challenges" name="Challenges"/>
                 <ImageButton bg="/images/icons/worldcreator.png" to="/worlds" name="Worlds"/>
                 <ImageButton bg="/images/banner/timer-banner.webp" to="/timer" name="Timer"/>
             </div>

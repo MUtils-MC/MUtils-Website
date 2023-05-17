@@ -22,6 +22,8 @@ export default function TopScreen({ title }) {
 
         window.addEventListener("scroll", onTopScroll)
 
+        blurOut()
+
         return () => {
             window.removeEventListener("scroll", onTopScroll)
         }
@@ -36,7 +38,7 @@ export default function TopScreen({ title }) {
                 <div className="top-logo" >MUtils</div>
                 <div className="top-logo" >{title}</div>
             </div>
-            <img src="https://i.imgur.com/J2mdf8T.png" className="top-bg" style={{filter: filter, transform: height}} onLoad={blurOut}  alt="landscape"/>
+            <img src="/images/banner/main-bg.jpg" className="top-bg" style={{filter: filter, transform: height}} alt="landscape"/>
             <div className="top-transition" onLoad={() => console.log("click")} />
         </div>
     </>

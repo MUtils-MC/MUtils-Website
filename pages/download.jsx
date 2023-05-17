@@ -39,7 +39,7 @@ function Download() {
             </div>
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
-                    <b>Note:</b> MTimer and MWorld is not yet released! We will do our best to release them as soon as possible...
+                    <b>Note:</b> MWorld is not yet released! We will do our best to release it as soon as possible...
                 </div>
             </div>
         </div>

@@ -22,7 +22,7 @@ function Shop() {
             <div className="display-grid">
                 <ShopItem name="MUtils Lite" image="/images/icons/mutils-lite.png" kofi="f018432bf2">
                     <ShopItemPerk name="Lifetime MUtils Premium" is={1} desc="You will recieve a permanent MUtils-Lite licence to use MUtils-Premium content"/>
-                    <ShopItemPerk name="All Challenges" is={1} desc="Available Challenges from MUtils-Challenges"/>
+                    <ShopItemPerk name="All Challenges" is={1} desc="Available List from MUtils-List"/>
                     <ShopItemPerk name="All Utilities" is={1} desc="Variouse utils from all MUtils products"/>
                     <ShopItemPerk name="Timer-Design Workshop" is={1} desc="Upload & download timer designs from the public workshop (MUtils-Timer)"/>
                     <ShopItemPerk name="World-Preset Workshop" is={1} desc="Upload & download world presets from the public workshop (MUtils-Worlds)"/>
@@ -37,7 +37,7 @@ function Shop() {
                 </ShopItem>
                 <ShopItem name="MUtils Ultimate" image="/images/icons/mutils500.png" kofi="34a67861f1">
                     <ShopItemPerk name="Lifetime MUtils Premium" is={1} desc="You will recieve a permanent MUtils-Ultimate licence to use MUtils-Premium content"/>
-                    <ShopItemPerk name="All Challenges" is={1} desc="Available Challenges from MUtils-Challenges"/>
+                    <ShopItemPerk name="All Challenges" is={1} desc="Available List from MUtils-List"/>
                     <ShopItemPerk name="All Utilities" is={1} desc="Variouse utils from all MUtils products"/>
                     <ShopItemPerk name="Timer-Design Workshop" is={1} desc="Upload & download timer designs from the public workshop (MUtils-Timer)"/>
                     <ShopItemPerk name="World-Preset Workshop" is={1} desc="Upload & download world presets from the public workshop (MUtils-Worlds)"/>
