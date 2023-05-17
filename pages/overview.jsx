@@ -5,8 +5,6 @@ import React, {useEffect} from "react";
 import {scrollEffect} from "../components/Effects";
 import ImageButton from "../components/ImageButton";
 import Link from "next/link";
-import {Interweave} from "interweave";
-import parse from 'html-react-parser';
 
 function Overview() {
     useEffect(scrollEffect);
