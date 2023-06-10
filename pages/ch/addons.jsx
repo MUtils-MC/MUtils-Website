@@ -51,7 +51,7 @@ function Addons() {
                     <a href="https://dc.mutils.net" className="text-link" target="_blank">Discord server</a>
                     <span> to submit it. Using addons come with no warranty to work like expected!</span>
                 </div>
-                <img className="box-image" alt="MUtils Logo" src="/images/mc/green-cmd.png"/>
+                <img className="box-image" alt="MUtils Logo" src="/images/mc/Mira_Website_Icon.png"/>
             </div>
             <div className="display-grid">
                 {generateAddonPanels(addonsPanel)}

@@ -386,6 +386,7 @@ div .text-block {
 
 .docs-box {
     display: flex;
+    flex-direction: column;
     margin: 1rem 15% 1rem 15%;
     padding: 1rem;
     color: snow;
@@ -412,6 +413,23 @@ div .text-block {
 
 .markdown {
     white-space: pre-wrap;
+}
+
+.docs-spoiler {
+    display: flex;
+    background-color: #1d1f20;
+    margin: .5rem 0 .5rem 0;
+    padding: .5rem .8rem;
+    border-radius: 10px;
+}
+
+details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+    0%    {opacity: 0; margin-left: -10px}
+    100%  {opacity: 1; margin-left: 1rem}
 }
 
 @media only screen and (max-width: 1024px) {

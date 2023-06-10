@@ -66,14 +66,10 @@ function Navbar(props) {
                     <NavItem title="Content " iconRight={<ArrowDownIcon/>} current={props.current}
                              highlight={props.highlight}>
                         <DropdownMenu>
-                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/ch/info" current={props.current}>Official
-                                Challenges</DropdownItem>
-                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/custom" current={props.current}>Custom
-                                Challenges</DropdownItem>
-                            <DropdownItem leftIcon={<ClockIcon/>} to="/timer" current={props.current}>Custom Timer
-                                Designs</DropdownItem>
-                            <DropdownItem leftIcon={<WorldCreatorIcon/>} to="/world" current={props.current}>World
-                                Presets</DropdownItem>
+                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/ch/info" current={props.current}>MChallenges</DropdownItem>
+                            <DropdownItem leftIcon={<ClockIcon/>} to="/timer" current={props.current}>MTimer</DropdownItem>
+                            <DropdownItem leftIcon={<WorldCreatorIcon/>} to="/world" current={props.current}>MWorld</DropdownItem>
+                            <DropdownItem leftIcon={<WorldCreatorIcon/>} to="/mweb" current={props.current}>MWebserver</DropdownItem>
                         </DropdownMenu>
                     </NavItem>
                     <NavItem title="More " iconRight={<ArrowDownIcon/>} current={props.current}
