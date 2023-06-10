@@ -38,7 +38,7 @@ function Downloads() {
             if (LoginDataCache.id === null) {
                 return
             }
-            setProfileManager(new ProfileManager("lkSn7-894tv-69xXl", LoginDataCache.id))
+            setProfileManager(new ProfileManager("TOKEN", LoginDataCache.id))
         }
     }, [loggedIn]);
 
