@@ -47,4 +47,10 @@ export default class ProfileManager {
         return data
     }
 
+    async deleteConnection(ip) {
+        let res = await fetch("http://localhost:8080/account/connections/delete", {
+            headers: {...this.getHeaders(), "ip": ip},
+        })
+    }
+
 }

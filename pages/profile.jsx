@@ -108,7 +108,7 @@ function Downloads() {
                     <AccountInfo accountInfo={accountInfo}/>
                 )}
                 {loader(connections[0],
-                    <ConnectionList connections={connections}/>
+                    <ConnectionList connections={connections} profileManager={profileManager}/>
                 )}
                 {loader(styles.availableStyles,
                     <StyleList colors={styles} onSelect={(i) => setStyle(i)}/>

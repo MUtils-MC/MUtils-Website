@@ -1,7 +1,7 @@
 import React from 'react';
-import {AiFillDelete, AiFillEdit} from "react-icons/all";
+import {AiFillDelete, AiFillEdit} from "react-icons/ai";
 
-const ConnectionList = ({connections, onDelete}) => {
+const ConnectionList = ({connections, profileManager}) => {
 
     console.log(connections)
 
@@ -14,8 +14,8 @@ const ConnectionList = ({connections, onDelete}) => {
                         <span>CREATED</span> {new Date(connection.created).toLocaleDateString("de-DE")}</p>
                 </div>
                 <div>
-                    <button className='connection-card-button'><AiFillEdit/></button>
-                    <button className='connection-card-button'><AiFillDelete/></button>
+                    <button className='connection-card-button' onClick={() => profileManager.deleteConnection(connection.ip)}><AiFillEdit/></button>
+                    <button className='connection-card-button' onClick={() => profileManager.deleteConnection(connection.ip)}><AiFillDelete/></button>
                 </div>
             </div>
         );
