@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import Link from "next/link";
 
 function footer() {
 
@@ -11,11 +10,11 @@ function footer() {
     return <>
         <div className="page-up">
             <a href="#" onClick={moveToTop}>
-                <img className="arrow-up" src="https://i.imgur.com/brFWJQu.png" width="62" sizes="62px"
+                <img className="arrow-up" src="/images/icons/arrow-up.png" width="62" sizes="62px"
                      alt="Arrow pointing up"/>
             </a>
             <a href="#" onClick={moveToTop}>
-                <img className="arrow-up" src="https://i.imgur.com/brFWJQu.png" width="62" sizes="62px"
+                <img className="arrow-up" src="/images/icons/arrow-up.png" width="62" sizes="62px"
                      alt="Arrow pointing up"/>
             </a>
         </div>

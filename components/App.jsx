@@ -2,7 +2,7 @@
 // import {Route, Routes} from "react-router-dom"
 // import Overview from "../pages/overview";
 // import Index from "../pages";
-// import Challenges from "../pages/challenges";
+// import List from "../pages/challenges";
 // import Callback from "../pages/oauth/callback";
 // import LogIn from "../pages/oauth/login";
 // import Timer from "../pages/timer";
@@ -18,7 +18,7 @@
 //         <Routes>
 //             <Route path="/" element={<Index />} />
 //             <Route path="/overview" element={<Overview />} />
-//             <Route path="/challenges" element={<Challenges />} />
+//             <Route path="/challenges" element={<List />} />
 //             <Route path="/download" element={<Download />} />
 //             <Route path="/timer" element={<Timer />} />
 //             <Route path="/shop" element={<Shop />} />

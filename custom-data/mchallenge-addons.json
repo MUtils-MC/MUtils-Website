@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Example Addon",
+    "description": "This addon is an example to display it on the website. To test a very lengthy description, i write some more words to fill the space",
+    "image": "https://i.imgur.com/xe2N5eF.png",
+    "loader": "Paper",
+    "banner": "#123456",
+    "authors": [
+      "Miraculixx",
+      "Anton"
+    ],
+    "version": {
+      "from": "1.18",
+      "to": "1.19.4"
+    },
+    "tags": [
+      "CURSED",
+      "MULTIPLAYER",
+      "RANDOMIZER",
+      "WORLD"
+    ],
+    "downloads": {
+      "modrinth": "https://modrinth.com/plugin/timer",
+      "cf": "https://legacy.curseforge.com/minecraft/bukkit-plugins/mtimer",
+      "github": "https://github.com/MUtils-MC/MUtils"
+    }
+  },
+
+  {
+    "name": "Crash on damage",
+    "description": "This addon adds one challenge that crashes everyone's client on any damage if enabled. WARNING - This crashes/closes your minecraft client (no lag)",
+    "image": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3b/Anvil_(N)_JE3.png/",
+    "loader": "Paper",
+    "banner": null,
+    "authors": [
+      "Mooziii"
+    ],
+    "version": {
+      "from": "1.18",
+      "to": "1.19.4"
+    },
+    "tags": [
+      "CURSED"
+    ],
+    "downloads": {
+      "github": "https://github.com/mooziii/MUtils-DamageCrash/releases/"
+    }
+  },
+
+  {
+    "name": "Effect on damage",
+    "description": "This addon adds one challenge that applies a random effect to the player on any damage. Effects start on level 1 and rise on each duplication",
+    "image": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/75/Water_Bottle_JE2_BE2.png",
+    "loader": "Paper",
+    "banner": null,
+    "authors": [
+      "DasPhiller"
+    ],
+    "version": {
+      "from": "1.18",
+      "to": "1.19.4"
+    },
+    "tags": [
+      "RANDOMIZER"
+    ],
+    "downloads": {
+      "github": "https://github.com/DasPhiller/damagerandomeffect-addon/releases"
+    }
+  }
+]

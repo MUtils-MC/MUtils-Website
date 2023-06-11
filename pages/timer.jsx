@@ -31,7 +31,7 @@ function Timer() {
                 </div>
             </div>
             <div className="text-image-box scroller scroller-wait">
-                <img className="box-image" alt="MUtils Logo" src="/images/icons/red_cmd.png"/>
+                {/*<img className="box-image" alt="MUtils Logo" src="/images/icons/red_cmd.png"/>*/}
                 <div className="box-text">
                     The Workshop is not implemented yet!<br/>
                     MTimer is in BETA mode and lacks some features to be completed, please be patient!

@@ -1,14 +1,16 @@
 import ArrowDownIcon from "./Images/carvet.svg"
 import CraftingTableIcon from "./Images/crafting-icon.svg"
 import WorldCreatorIcon from "./Images/world-icon.svg"
+import EarthIcon from "./Images/earth.svg"
 import ClockIcon from "./Images/clock.svg"
 import DiscordIcon from "./Images/discord.svg"
+import QuestionIcon from "./Images/question_mark.svg"
+import CogIcon from "./Images/cog.svg"
 
 import React, {useEffect, useRef, useState} from 'react'
 import LoginDataCache from "./auth/LoginDataCache";
 import {loadData} from "./auth/ReceiveData";
 import Link from "next/link";
-import Head from "next/head";
 
 function Navbar(props) {
     const nav = useRef()
@@ -67,22 +69,18 @@ function Navbar(props) {
                     <NavItem title="Content " iconRight={<ArrowDownIcon/>} current={props.current}
                              highlight={props.highlight}>
                         <DropdownMenu>
-                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/challenges" current={props.current}>Official
-                                Challenges</DropdownItem>
-                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/custom" current={props.current}>Custom
-                                Challenges</DropdownItem>
-                            <DropdownItem leftIcon={<ClockIcon/>} to="/timer" current={props.current}>Custom Timer
-                                Designs</DropdownItem>
-                            <DropdownItem leftIcon={<WorldCreatorIcon/>} to="/world" current={props.current}>World
-                                Presets</DropdownItem>
+                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/ch/info" current={props.current}>MChallenges</DropdownItem>
+                            <DropdownItem leftIcon={<ClockIcon/>} to="/timer" current={props.current}>MTimer</DropdownItem>
+                            <DropdownItem leftIcon={<WorldCreatorIcon/>} to="/world" current={props.current}>MWorld</DropdownItem>
+                            <DropdownItem leftIcon={<EarthIcon/>} to="/mweb" current={props.current}>MWeb</DropdownItem>
                         </DropdownMenu>
                     </NavItem>
                     <NavItem title="More " iconRight={<ArrowDownIcon/>} current={props.current}
                              highlight={props.highlight}>
                         <DropdownMenu>
                             <DropdownItem leftIcon={<DiscordIcon/>} to="/discord">Support</DropdownItem>
-                            <DropdownItem leftIcon={<DiscordIcon/>} to="/help">Q&A</DropdownItem>
-                            <DropdownItem leftIcon={<DiscordIcon/>} to="/oauth/login">Log In</DropdownItem>
+                            <DropdownItem leftIcon={<QuestionIcon/>} to="/help">Q&A</DropdownItem>
+                            <DropdownItem leftIcon={<CogIcon/>} to="/oauth/login">Log In</DropdownItem>
                         </DropdownMenu>
                     </NavItem>
                     {loggedIn &&
@@ -90,8 +88,8 @@ function Navbar(props) {
                                  img={"https://cdn.discordapp.com/avatars/" + LoginDataCache.id + "/" + LoginDataCache.avatar}>
                             <DropdownMenu>
                                 <DropdownItem leftIcon={<DiscordIcon/>} to="/discord">Support</DropdownItem>
-                                <DropdownItem leftIcon={<DiscordIcon/>} to="/help">Q&A</DropdownItem>
-                                <DropdownItem leftIcon={<DiscordIcon/>} to="/oauth/login">Log Out</DropdownItem>
+                                <DropdownItem leftIcon={<QuestionIcon/>} to="/help">Q&A</DropdownItem>
+                                <DropdownItem leftIcon={<CogIcon/>} to="/oauth/login">Log Out</DropdownItem>
                             </DropdownMenu>
                         </NavItem>
                     }

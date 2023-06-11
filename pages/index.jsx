@@ -36,7 +36,7 @@ function Index() {
                     <h1 className="main-header">MUtils Home</h1>
                     <p className="main-text">Advanced Minecraft modifications for your server and client!</p>
                     <Link className="main-button" href="/overview">Feature Overview</Link><span> </span>
-                    <Link className="main-button" href="/challenges">Challenge List</Link><span> </span>
+                    <Link className="main-button" href="/ch/list">Challenge List</Link><span> </span>
                     <Link className="main-button" href="/discord">Discord Support</Link>
                     <br/>
                     <Link className="main-button" href="/download">{"< Download >"}</Link>
