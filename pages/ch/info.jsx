@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import ImageButton from "../../components/ImageButton";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import {CommandPart, Select, Spoiler} from "../../components/TextBox";
 
 function Addons() {
     const [infoBody, setInfoBody] = useState("Unable to load information")
@@ -155,36 +156,6 @@ function Addons() {
         </div>
         <Footer />
     </>
-}
-
-function Spoiler(props) {
-    return <details className="docs-spoiler">
-        <summary style={{fontWeight: "bold", cursor: 'pointer'}} >{props.title}</summary>
-        <div style={{margin: '.4rem 1rem .2rem 1rem'}}>
-            <Select>{props.desc}<br/> <br/></Select>
-            <div style={{backgroundColor: '#17171a', padding:  '.3rem', borderRadius: '10px', color: '#68B85D'}}>
-                <Select>{props.cmd}</Select><br/>
-            </div>
-            {props.children}
-            <div>
-                <span style={{padding: '0 .5rem 0 0'}}><br/> Permission ⇒</span>
-                <Select>{props.perm}</Select>
-            </div>
-        </div>
-    </details>
-}
-
-function CommandPart(props) {
-    return <div style={{display: 'flex', padding: '0 0 5px 1rem'}}>
-        <span style={{padding: '0 .5rem 0 0'}}>{props.part + " ⇒ "}</span>
-        <div style={{display: 'flex', flexDirection: "column"}}>
-            {props.children}
-        </div>
-    </div>
-}
-
-function Select(props) {
-    return <span style={{userSelect: 'text', cursor: 'text'}}>{props.children}</span>
 }
 
 export default Addons

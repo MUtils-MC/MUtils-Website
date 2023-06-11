@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import TopScreen from "../components/TopScreen";
 import Footer from "../components/Footer";
 import ImageButton from "../components/ImageButton";
+import {CommandPart, Select, Spoiler} from "../components/TextBox";
 
 function Addons() {
     const [infoBody, setInfoBody] = useState("Unable to load information")
@@ -28,154 +29,185 @@ function Addons() {
             </div>
 
             <div className="text-image-box scroller scroller-wait">
-                <ImageButton bg="/images/banner/mweb.webp" to="/ch/list" name="Modrinth"/>
+                <ImageButton bg="/images/banner/mweb.webp" to="https://modrinth.com/mod/mweb" target="_blank" name="Modrinth"/>
             </div>
 
             <div className="docs-box">
-                <h2>MUtils Commands & Utilities</h2><br/>
-                <Spoiler title="Challenge Command (main command)"
-                         desc="MChallenge main command. Manage, toggle and setup challenges and more"
-                         cmd="/challenge [<action>, settings]"
-                         perm="mutils.challenge"
+                <h2>Whitelist Commands & Permissions</h2><br/>
+                <Spoiler title="Open Whitelist Manager"
+                         desc="Open the whitelist manager GUI. All actions are still permission restricted"
+                         cmd="/ws whitelist"
+                         perm="mweb.whitelist.list"
                 >
-                    <CommandPart part="*no action*">
-                        <Select>{"Open the setup menu to toggle and modify modifications"}</Select>
+                </Spoiler>
+                <Spoiler title="Add New Whitelist"
+                         desc="Create a new file whitelist with custom propeties"
+                         cmd="/ws whitelist add <file> <access> [<restriction>] [<timeout>]"
+                         perm="mweb.whitelist.custom"
+                >
+                    <CommandPart part="<access>">
+                        <Select>{"GLOBAL - Everyone can access the link"}</Select>
+                        <Select>{"USER_RESTRICTED - Only available for selected user"}</Select>
+                        <Select>{"PASSPHRASE_RESTRICTED - Only available with selected passphrase"}</Select>
                     </CommandPart>
-                    <CommandPart part="[<action>]">
-                        <Select>{"start - Start all selected modifications"}</Select>
-                        <Select>{"stop - Stop all active modifications (remove temp data)"}</Select>
-                        <Select>{"pause - Pause all active modifications (keep temp data)"}</Select>
-                        <Select>{"resume - Resume all paused modifications"}</Select>
-                        <Select>{"login - Connect your account to activate premium features (requires key)"}</Select>
+                    <CommandPart part="[<restriction>]">
+                        <Select>{"User name or passphrase"}</Select>
                     </CommandPart>
-                    <CommandPart part="settings">
-                        <Select>{"language - Change the display language (currently providing 4 langs)"}</Select>
-                        <a href="https://translate.mutils.net" className="text-link" target="_blank">Help us translating MUtils</a>
-                        <Select>{"debug - If you need support it sometimes help us to toggle on debug mode for more information"}</Select>
+                    <CommandPart part="[<timeout>]">
+                        <Select>{"Whitelist timeout. Enter a time like 2m5s to deactivate the link after 2:05min"}</Select>
                     </CommandPart>
                 </Spoiler>
-
-                <Spoiler title="Position Command"
-                         desc="Mark certain positions in your worlds to save them for later purpose."
-                         cmd="/position <param> [<name>]"
-                         perm="global"
+                <Spoiler title="Remove Whitelist"
+                         desc="Remove an existing whitelist. You can disable it instead in the GUI editor"
+                         cmd="/ws whitelist remove <id>"
+                         perm="mweb.whitelist.delete"
                 >
-                    <CommandPart part="<param>">
-                        <Select>{"set - Create a new entry at your current position"}</Select>
-                        <Select>{"remove - Remove an entry by name"}</Select>
-                        <Select>{"get - Prints an entry in chat by name"}</Select>
-                        <Select>{"reset - Removes all entries (mutils.position.reset)"}</Select>
-                    </CommandPart>
-                    <CommandPart part="[<name>]">
-                        <Select>{"Possible argument representing the position name"}</Select>
-                        <Select>{"- Used by set, remove, get"}</Select>
+                    <CommandPart part="<id>">
+                        <Select>{"The whitelist/download id. Hover over the suggestions to see the path"}</Select>
                     </CommandPart>
                 </Spoiler>
-
-                <Spoiler title="Backpack Command"
-                         desc="Save and share items in a global or personal backpack with changeable sizes."
-                         cmd="/backpack [<player>, setup]"
-                         perm="global"
+                <Spoiler title="Get Whitelist Link"
+                         desc="Get the link of an existing whitelist. If a passphrase is needed, it's included in the link!"
+                         cmd="/ws whitelist get <id>"
+                         perm="mweb.whitelist.info"
                 >
-                    <CommandPart part="[<player>]">
-                        <Select>{"Optional argument representing the player targets name"}</Select>
-                        <Select>{"- Used to access others personal backpack (command.backpack.other)"}</Select>
-                    </CommandPart>
-                    <CommandPart part="[setup]">
-                        <Select>{"global - Switch between global and personal mode"}</Select>
-                        <Select>{"size - Changes the size of all private and the global backpack (items kept saved)"}</Select>
-                        <Select>{"reset - Clears all private and the global backpack"}</Select>
-                        <Select>{"- Admin setup (mutils.backpack.setup)"}</Select>
+                    <CommandPart part="<id>">
+                        <Select>{"The whitelist/download id. Hover over the suggestions to see the path"}</Select>
                     </CommandPart>
                 </Spoiler>
-
-                <Spoiler title="Invsee Command"
-                         desc="Look into the live inventory of other players and modify it."
-                         cmd="/invsee <player>"
-                         perm="mutils.invsee"
+                <Spoiler title="Send Resourcepack"
+                         desc="Send a archive or folder to players as a resourcepack!"
+                         cmd="/ws texturepack <path> <target> [<force>]"
+                         perm="mweb.texturepack.send"
                 >
-                    <CommandPart part="<player>">
-                        <Select>{"Argument representing the target players name"}</Select>
+                    <CommandPart part="<path>">
+                        <Select>{"Path to the resource pack that should be send"}</Select>
+                    </CommandPart>
+                    <CommandPart part="<target>">
+                        <Select>{"All target players that should receive the resource pack"}</Select>
+                    </CommandPart>
+                    <CommandPart part="[<force>]">
+                        <Select>{"Force targets to use this resource pack. Players still can quit instead"}</Select>
                     </CommandPart>
                 </Spoiler>
-
-                <Spoiler title="Hide/Show Command"
-                         desc="Hide yourself (or others) from other players even outside of the spectator mode. Used in various challenges, you can invert the effect by using /show."
-                         cmd="/hide [<players>] & /show [<players>]"
-                         perm="mutils.hide"
+                <Spoiler title="GUI Shortcuts"
+                         desc="Shortcut permissions used in the whitelist GUI"
+                         cmd="none"
                 >
-                    <CommandPart part="[<player>]">
-                        <Select>{"Optional argument representing the player target/s"}</Select>
-                        <Select>{"The command executor is the target if no target is provided"}</Select>
+                    <CommandPart part="Global Links">
+                        <Select>{"mweb.whitelist.global"}</Select>
                     </CommandPart>
-                </Spoiler>
-
-                <Spoiler title="Heal Command"
-                         desc="A simple command to heal and feed yourself and/or other players."
-                         cmd="/heal [<players>]"
-                         perm="mutils.heal"
-                >
-                    <CommandPart part="[<players>]">
-                        <Select>{"Optional argument representing the player target/s"}</Select>
-                        <Select>{"The command executor is the target if no target is provided"}</Select>
+                    <CommandPart part="Private Links">
+                        <Select>{"mweb.whitelist.privat"}</Select>
                     </CommandPart>
-                </Spoiler>
-
-                <Spoiler title="Reset Command"
-                         desc="Deletes all loaded worlds on the server and recreate the three base dimensions randomly. To do so the server will restart once due to minecraft's limitations"
-                         cmd="/reset"
-                         perm="mutils.reset"
-                >
+                    <CommandPart part="Edit File Links">
+                        <Select>{"mweb.whitelist.edit"}</Select>
+                    </CommandPart>
                 </Spoiler>
             </div>
+
             <div className="docs-box">
-                <h2>Custom Game Rules</h2><br/>
-                <div style={{padding: '0.5rem 0 0.5rem 0'}}>
-                    <Select>MChallenge contains some handy game rules to quickly advance your server to your needs! All custom game rules can be toggled with the following command:</Select>
-                </div>
-                <div style={{backgroundColor: '#1d1f20', padding:  '.3rem', borderRadius: '10px', color: '#68B85D'}}>
-                    <Select>{"/rule <rule> <value>"}</Select><br/>
-                </div>
-                <div style={{padding: '0.5rem 0 0 1rem'}}>
-                    <li>Hearts in tab ⇒ Display health of all players in the tablist (hearts or number)</li>
-                    <li>Toggle PvP ⇒ Quickly toggle the ability to damage other players</li>
-                    <li>Fancy Chat ⇒ Upgrade the boring vanilla join/quit/chat messages with a modern style</li>
-                    <li>More coming soon...</li>
-                </div>
+                <h2>Manager Commands & Permissions</h2><br/>
+                <Spoiler title="Open File Manager"
+                         desc="Open the file manager GUI. All actions are still permission restricted"
+                         cmd="/ws manage"
+                         perm="mweb.manage.list"
+                >
+                </Spoiler>
+                <Spoiler title="Rename File"
+                         desc="Rename a selected file or folder"
+                         cmd="/ws manage rename <file> <new-name>"
+                         perm="mweb.manage.rename"
+                >
+                    <CommandPart part="<file>">
+                        <Select>{"Path to the file that should be renamed"}</Select>
+                    </CommandPart>
+                    <CommandPart part="<new-name>">
+                        <Select>{"The new name. It can not contain any file restricted characters!"}</Select>
+                    </CommandPart>
+                </Spoiler>
+                <Spoiler title="Delete File"
+                         desc="Delete a selected file or folder (with all content)"
+                         cmd="/ws manage rename <file>"
+                         perm="mweb.manage.delete"
+                >
+                    <CommandPart part="<file>">
+                        <Select>{"Path to the file that should be deleted"}</Select>
+                    </CommandPart>
+                </Spoiler>
+                <Spoiler title="Zip Folder"
+                         desc="Zip a selected folder (with all content) to a new archive"
+                         cmd="/ws manage zip <file>"
+                         perm="mweb.manage.zip"
+                >
+                    <CommandPart part="<file>">
+                        <Select>{"Path to the folder that should be zipped"}</Select>
+                    </CommandPart>
+                </Spoiler>
+                <Spoiler title="Unzip Folder"
+                         desc="Unzip a selected archive (with all content) to a new folder"
+                         cmd="/ws manage unzip <file>"
+                         perm="mweb.manage.zip"
+                >
+                    <CommandPart part="<file>">
+                        <Select>{"Path to the archive that should be unzipped"}</Select>
+                    </CommandPart>
+                </Spoiler>
+            </div>
+
+            <div className="docs-box">
+                <h2>Settings Commands & Permissions</h2><br/>
+                <Spoiler title="Get/Set Port"
+                         desc="Get or set the access port. The port must be open and unused"
+                         cmd="/ws settings port [<port>]"
+                         perm="mweb.settings"
+                >
+                    <CommandPart part="[<port>]">
+                        <Select>{"The new port that should be used. Needs a restart!"}</Select>
+                    </CommandPart>
+                </Spoiler>
+                <Spoiler title="Get/Set Logging"
+                         desc="Get or set if all requests should be logged"
+                         cmd="/ws settings logaccess [<state>]"
+                         perm="mweb.settings"
+                >
+                    <CommandPart part="[<state>]">
+                        <Select>{"True or false"}</Select>
+                    </CommandPart>
+                </Spoiler>
+                <Spoiler title="Get/Set Proxy"
+                         desc="Get or set the proxy. This instantly changes all links"
+                         cmd="/ws settings proxy [<proxy>]"
+                         perm="mweb.settings"
+                >
+                    <CommandPart part="[<proxy>]">
+                        <Select>{"The new redirect. Add http:// or https:// at the beginning"}</Select>
+                    </CommandPart>
+                </Spoiler>
+                <Spoiler title="Set Language"
+                         desc="Set a language. This will change all messsages and text used by MWeb"
+                         cmd="/ws settings language [<lang>]"
+                         perm="mweb.settings"
+                >
+                    <CommandPart part="[<lang>]">
+                        <Select>{"The new language code. If custom, use the file name (without ending)"}</Select>
+                    </CommandPart>
+                </Spoiler>
+                <Spoiler title="Get/Set Debug"
+                         desc="Enable or disable the debug mode. Should only be used if advised from support"
+                         cmd="/ws settings debug [<state>]"
+                         perm="mweb.settings"
+                >
+                    <CommandPart part="[<state>]">
+                        <Select>{"True or false"}</Select>
+                    </CommandPart>
+                </Spoiler>
             </div>
         </div>
         <Footer />
     </>
 }
 
-function Spoiler(props) {
-    return <details className="docs-spoiler">
-        <summary style={{fontWeight: "bold", cursor: 'pointer'}} >{props.title}</summary>
-        <div style={{margin: '.4rem 1rem .2rem 1rem'}}>
-            <Select>{props.desc}<br/> <br/></Select>
-            <div style={{backgroundColor: '#17171a', padding:  '.3rem', borderRadius: '10px', color: '#68B85D'}}>
-                <Select>{props.cmd}</Select><br/>
-            </div>
-            {props.children}
-            <div>
-                <span style={{padding: '0 .5rem 0 0'}}><br/> Permission ⇒</span>
-                <Select>{props.perm}</Select>
-            </div>
-        </div>
-    </details>
-}
 
-function CommandPart(props) {
-    return <div style={{display: 'flex', padding: '0 0 5px 1rem'}}>
-        <span style={{padding: '0 .5rem 0 0'}}>{props.part + " ⇒ "}</span>
-        <div style={{display: 'flex', flexDirection: "column"}}>
-            {props.children}
-        </div>
-    </div>
-}
-
-function Select(props) {
-    return <span style={{userSelect: 'text', cursor: 'text'}}>{props.children}</span>
-}
 
 export default Addons

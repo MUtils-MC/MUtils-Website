@@ -34,8 +34,11 @@ function Download() {
             </div>
             <div className="section-header scroller scroller-wait">MTimer</div>
             <div className="text-image-box scroller scroller-wait">
-                <ImageButton bg="https://i.imgur.com/nTDDX9F.png" to="https://modrinth.com/plugin/timer" name="Paper Latest"/>
-                <ImageButton bg="https://i.imgur.com/wUkAeLo.png" to="https://modrinth.com/mod/timer" name="Fabric Latest"/>
+                <ImageButton bg="/images/banner/modrinth.png" to="https://modrinth.com/mod/timer" name="Modrinth"/>
+            </div>
+            <div className="section-header scroller scroller-wait">MWeb</div>
+            <div className="text-image-box scroller scroller-wait">
+                <ImageButton bg="/images/banner/modrinth.png" to="https://modrinth.com/mod/mweb" name="Modrinth"/>
             </div>
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
