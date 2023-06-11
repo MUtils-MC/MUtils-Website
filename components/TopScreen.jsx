@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Head from "next/head";
 
-export default function TopScreen({ title }) {
+export default function TopScreen({title, children}) {
     const [size, setSize] = useState("scale(0.7)");
     const [opacity, setOpacity] = useState("0.1");
     const [filter, setFilter] = useState(null);
@@ -35,10 +35,16 @@ export default function TopScreen({ title }) {
         </Head>
         <div>
             <div className="top-logo-box" style={{transform: size, opacity: opacity}}>
-                <div className="top-logo" >MUtils</div>
-                <div className="top-logo" >{title}</div>
+                {title === "RAW" ?
+                    children
+                    :
+                    <>
+                        <div className="top-logo">MUtils</div>
+                        <div className="top-logo">{title}</div>
+                    </>}
             </div>
-            <img src="/images/banner/main-bg.jpg" className="top-bg" style={{filter: filter, transform: height}} alt="landscape"/>
+            <img src="/images/banner/main-bg.jpg" className="top-bg" style={{filter: filter, transform: height}} 
+                 onLoad={blurOut} alt="landscape"/>
             <div className="top-transition" onLoad={() => console.log("click")} />
         </div>
     </>

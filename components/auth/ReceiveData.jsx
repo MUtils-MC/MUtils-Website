@@ -27,7 +27,7 @@ export function loadData(token, callback) {
                 callback(xmlHttp.responseText);
         }
         xmlHttp.open("GET", url, true);
-        xmlHttp.setRequestHeader('Authorization', 'Bearer ' + token)
+        xmlHttp.setRequestHeader('token', token)
         xmlHttp.send("  ");
     }
 }

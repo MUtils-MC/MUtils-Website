@@ -1,35 +1,38 @@
 import {useEffect} from "react";
-// import {useNavigate, useSearchParams} from "react-router-dom"; // TODO: useRouter
-import { loadData } from "../../components/auth/ReceiveData"
+import {useRouter} from "next/router";
+import LoginDataCache from "../../components/auth/LoginDataCache";
+import {loadData} from "../../components/auth/ReceiveData";
 
-function Callback() {
-    // const [searchParams, setSearchParams] = useSearchParams();
-    // const navigate = useNavigate();
+
+Callback.getInitialProps = async ({ query }) => {
+    const token = query.t;
+    return { token };
+};
+
+function Callback({token}) {
+    const router = useRouter()
 
     useEffect(() => {
-        const token = "empty" // searchParams.get("t")
         if (token == null || token === "null") {
-            console.warn("Failed to process token!")
-            // localStorage.removeItem("dc_token")
-            // LoginDataCache.id = null
-            // LoginDataCache.username = null
-            // LoginDataCache.discriminator = null
-            // LoginDataCache.avatar = null
-            // LoginDataCache.banner = null
-            // LoginDataCache.email = null
-            // window.location.replace("/overview")
+            console.info("Failed to process token!")
+            localStorage.removeItem("dc_token")
+            LoginDataCache.id = null
+            LoginDataCache.username = null
+            LoginDataCache.discriminator = null
+            LoginDataCache.avatar = null
+            LoginDataCache.banner = null
+            LoginDataCache.email = null
         } else {
             console.info("Received token to process... - " + token)
             localStorage.setItem("dc_token", token)
-            // searchParams.set("t", null)
             console.info("Storage - " + localStorage.getItem("dc_token"))
-            // loadData(token, () => { navigate("/overview") })
+            loadData(token, () => { router.push('/profile') })
         }
     }, []);
 
 
     return <>
-        <span style={{color:"white"}}>Processing response...</span>
+        <span style={{color: "white"}}>Processing response...</span>
     </>
 }
 
