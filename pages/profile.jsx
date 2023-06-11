@@ -38,7 +38,7 @@ function Downloads() {
             if (LoginDataCache.id === null) {
                 return
             }
-            setProfileManager(new ProfileManager("TOKEN", LoginDataCache.id))
+            setProfileManager(new ProfileManager("Aquarium20", LoginDataCache.id))
         }
     }, [loggedIn]);
 
@@ -88,12 +88,14 @@ function Downloads() {
 
     return <>
         <Navbar current="/profile"/>
-        <TopScreen title="RAW">
+        <TopScreen title="Profile">
             <div className="profile-hero-section">
                 {loader(loggedIn,
                     <>
                         <img className="profile-image"
-                             src={"https://cdn.discordapp.com/avatars/" + LoginDataCache.id + "/" + LoginDataCache.avatar}/>
+                             src={"https://cdn.discordapp.com/avatars/" + LoginDataCache.id + "/" + LoginDataCache.avatar}
+                             style={{boxShadow: '5px 5px 15px 4px #17171a', border: '2px solid snow'}}
+                        />
 
                         <h1 style={{color: "white", fontSize: "2.5rem"}}>Welcome, {LoginDataCache.username}</h1>
                     </>

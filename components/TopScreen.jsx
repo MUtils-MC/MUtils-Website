@@ -35,7 +35,7 @@ export default function TopScreen({title, children}) {
         </Head>
         <div>
             <div className="top-logo-box" style={{transform: size, opacity: opacity}}>
-                {title === "RAW" ?
+                {title === "Profile" ?
                     children
                     :
                     <>
