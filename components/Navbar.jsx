@@ -6,6 +6,7 @@ import ClockIcon from "./Images/clock.svg"
 import DiscordIcon from "./Images/discord.svg"
 import QuestionIcon from "./Images/question_mark.svg"
 import CogIcon from "./Images/cog.svg"
+import LogOutIcon from "./Images/logout.svg"
 
 import React, {useEffect, useRef, useState} from 'react'
 import LoginDataCache from "./auth/LoginDataCache";
@@ -80,16 +81,15 @@ function Navbar(props) {
                         <DropdownMenu>
                             <DropdownItem leftIcon={<DiscordIcon/>} to="/discord">Support</DropdownItem>
                             <DropdownItem leftIcon={<QuestionIcon/>} to="/help">Q&A</DropdownItem>
-                            <DropdownItem leftIcon={<CogIcon/>} to="/oauth/login">Log In</DropdownItem>
+                            {!loggedIn && <DropdownItem leftIcon={<CogIcon/>} to="/oauth/login">Log In</DropdownItem>}
                         </DropdownMenu>
                     </NavItem>
                     {loggedIn &&
                         <NavItem title=""
                                  img={"https://cdn.discordapp.com/avatars/" + LoginDataCache.id + "/" + LoginDataCache.avatar}>
                             <DropdownMenu>
-                                <DropdownItem leftIcon={<DiscordIcon/>} to="/discord">Support</DropdownItem>
-                                <DropdownItem leftIcon={<QuestionIcon/>} to="/help">Q&A</DropdownItem>
-                                <DropdownItem leftIcon={<CogIcon/>} to="/oauth/login">Log Out</DropdownItem>
+                                <DropdownItem leftIcon={<CogIcon/>} to="/profile">Dashboard</DropdownItem>
+                                <DropdownItem leftIcon={<LogOutIcon/>} to="/oauth/logout">Log Out</DropdownItem>
                             </DropdownMenu>
                         </NavItem>
                     }

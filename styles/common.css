@@ -423,6 +423,33 @@ div .text-block {
     border-radius: 10px;
 }
 
+.confirm-button {
+    width: 8rem;
+    height: 2rem;
+    background-color: #242526;
+    color: snow;
+    font-weight: bold;
+    border: 2px solid #68B85D;
+    border-radius: 5px;
+    transition: 250ms;
+}
+
+.confirm-button:hover {
+    border-color: #F25956;
+    color: #F25956;
+}
+
+.code-block {
+    background-color: #1d1f20;
+    color: #c4eac4;
+    padding: 0.3rem;
+    border-radius: 7px;
+    user-select: text;
+    font-size: medium;
+    font-family: "Consolas", sans-serif;
+    cursor: text;
+}
+
 details[open] summary ~ * {
     animation: sweep .5s ease-in-out;
 }

@@ -85,7 +85,6 @@
 .connection-header {
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
     color: snow;
 
     border-radius: 20px;
@@ -96,13 +95,12 @@
 }
 
 .connection-card {
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 16px;
     height: 5.4rem;
-    width: 34.6rem;
+    width: 36.6rem;
 
-
-    background-color: #242526;
+    background-color: #1d1f20;
     box-shadow: 5px 5px 11px 6px #17171a;
 
     margin-bottom: 16px;

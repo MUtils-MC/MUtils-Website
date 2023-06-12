@@ -109,7 +109,7 @@ function Downloads() {
                 {loader(accountInfo.key,
                     <AccountInfo accountInfo={accountInfo}/>
                 )}
-                {loader(connections[0],
+                {loader(1,
                     <ConnectionList connections={connections} profileManager={profileManager}/>
                 )}
                 {loader(styles.availableStyles,
