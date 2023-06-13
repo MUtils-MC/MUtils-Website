@@ -38,7 +38,7 @@ function Downloads() {
             if (LoginDataCache.id === null) {
                 return
             }
-            setProfileManager(new ProfileManager("Aquarium20", LoginDataCache.id))
+            setProfileManager(new ProfileManager("KEY", LoginDataCache.id))
         }
     }, [loggedIn]);
 

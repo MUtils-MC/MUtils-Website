@@ -23,6 +23,7 @@ const StyleList = ({colors, onSelect}) => {
                     <a href="https://dc.mutils.net" className="text-link" target="_blank">Discord</a>
                     <span>{" or donate to us via purchasing a licence or using any donating option."}<br/>{"Click "}</span>
                     <Link href="/styles" className="text-link">here</Link>
+                    <span>{" to see all available styles!"}</span>
                 </div>
             </div>
             {/*<h2 className={"connection-header"} style={{margin: '8rem 0 1rem 0'}}>Styles</h2>*/}
