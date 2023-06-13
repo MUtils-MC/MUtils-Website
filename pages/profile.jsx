@@ -87,7 +87,7 @@ function Downloads() {
     }
 
     return <>
-        <Navbar current="/profile"/>
+        <Navbar current="/profile" highlight=""/>
         <TopScreen title="Profile">
             <div className="profile-hero-section">
                 {loader(loggedIn,

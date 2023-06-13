@@ -450,6 +450,23 @@ div .text-block {
     cursor: text;
 }
 
+.input-box {
+    background-color: #242526;
+    border: 2px solid #68B85D;
+    border-radius: 5px;
+    width: 10rem;
+    height: 2rem;
+    color: lightgray;
+    padding: 0.5rem;
+    transition: 150ms;
+}
+
+.input-box:focus {
+    border-color: #18b800;
+    outline: none;
+    color: snow;
+}
+
 details[open] summary ~ * {
     animation: sweep .5s ease-in-out;
 }

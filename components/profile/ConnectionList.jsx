@@ -28,7 +28,7 @@ const ConnectionList = ({connections, profileManager}) => {
                                 <div style={{margin: '1rem'}}>• Renaming a server helps to organize your connections.<br/>  The name is only visible on your dashboard and not on your server!</div>
                                 <div style={{margin: '1rem'}}><span>• Current Name: </span>{getName(connection)}</div>
                                 <div style={{display: 'flex', justifyContent: 'center'}}>
-                                    <input/>
+                                    <input className="input-box" defaultValue={connection.name} onKeyDown={(e) => console.log("Pressed " + e.key)}/>
                                 </div>
                             </div>
                         )}
@@ -39,7 +39,8 @@ const ConnectionList = ({connections, profileManager}) => {
                     >
                         {close => (<div>
                                 <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '20px', borderBottom: 'snow 1px solid', paddingBottom: '5px'}}>Delete Server</div>
-                                <div style={{margin: '1rem'}}>• Do you really want to delete the following Server?<br/>  Note: You can only delete 3 connections every week!</div>
+                                <div style={{margin: '1rem'}}>• Do you really want to delete the following Server?<br/>
+                                      All settings will be resettet and all premium features become unavailable!<br/>  Note: You can only delete 3 connections every week!</div>
                                 <div style={{margin: '1rem'}}>• {connection.ip} {connection.name && <span>({connection.name})</span>}</div>
                                 <div style={{display: 'flex', justifyContent: 'center'}}>
                                     <button className="confirm-button" onClick={() => {
@@ -56,7 +57,7 @@ const ConnectionList = ({connections, profileManager}) => {
     }
 
     function renderConnections() {
-        if (connections[0] == null) return (<div className="text-image-box" style={{marginTop: '-2rem'}}>
+        if (connections[0] == null) return (<div className="text-image-box" style={{marginTop: '-2rem', marginBottom: '3rem'}}>
             <div className="box-text">
                 <span>You don't have any connected Servers! Use </span><span className="code-block">{"/<main-command> login <key>"}</span>
                 <span>{" on your server to connected it with MUtils! Look into our "}</span>
