@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const ConnectionList = ({connections, profileManager}) => {
 
-    console.log(connections)
+    console.debug(connections)
     function getName(connection) {
         if (connection.name == null) return (<span style={{fontStyle: 'italic'}}>Unset</span>)
         else return (<span style={{fontWeight: 'bold'}}>{connection.name}</span>)
@@ -13,7 +13,7 @@ const ConnectionList = ({connections, profileManager}) => {
 
     function renderConnection(connection) {
         return (
-            <div className="connection-card">
+            <div className="connection-card" key={connection.ip}>
                 <div>
                     <h2>{connection.name}</h2>
                     <p><span>IP ADDRESS</span> {connection.ip} <span className={"spacer"}/>
@@ -28,7 +28,13 @@ const ConnectionList = ({connections, profileManager}) => {
                                 <div style={{margin: '1rem'}}>• Renaming a server helps to organize your connections.<br/>  The name is only visible on your dashboard and not on your server!</div>
                                 <div style={{margin: '1rem'}}><span>• Current Name: </span>{getName(connection)}</div>
                                 <div style={{display: 'flex', justifyContent: 'center'}}>
-                                    <input className="input-box" defaultValue={connection.name} onKeyDown={(e) => console.log("Pressed " + e.key)}/>
+                                    <input className="input-box" defaultValue={connection.name} onKeyDown={(e) => {
+                                        if (e.key === "Enter" || e.key === "Escape") {
+                                            const input = e.target.value
+                                            if (input.length >= 64) e.target.
+                                            profileManager.renameConnection(connection.ip, input).then(r => { close() })
+                                        }
+                                    }}/>
                                 </div>
                             </div>
                         )}
@@ -50,7 +56,6 @@ const ConnectionList = ({connections, profileManager}) => {
                             </div>
                         )}
                     </Popup>
-                    {/*<button className='connection-card-button' onClick={() => profileManager.deleteConnection(connection.ip)}><AiFillDelete/></button>*/}
                 </div>
             </div>
         );

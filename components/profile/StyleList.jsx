@@ -21,7 +21,7 @@ const StyleList = ({colors, onSelect}) => {
                     <span>Styles are unique color schemes that change the way your MUtils look!<br/>
                     You can collect more styles by participate in events on our </span>
                     <a href="https://dc.mutils.net" className="text-link" target="_blank">Discord</a>
-                    <span>{" or donate to us via purchasing a licence or using any donating option."}<br/>{"Click "}</span>
+                    <span>{" or support us by purchasing a licence or using any donating option."}<br/>{"Click "}</span>
                     <Link href="/styles" className="text-link">here</Link>
                     <span>{" to see all available styles!"}</span>
                 </div>
@@ -30,7 +30,7 @@ const StyleList = ({colors, onSelect}) => {
             <div className="display-grid" style={{width: "100%"}}>
                 {colors.availableStyles.map(i =>
                     <div className={colors.selected === i.type ? "selected-style" : ""}
-                         onClick={() => onSelect(i.type)}>
+                         onClick={() => onSelect(i.type)} key={i.name}>
                         <DisplayBox
                             key={i.type}
                             name={i.name} desc={i.desc} tags={null}

@@ -54,4 +54,9 @@ export default class ProfileManager {
         })
     }
 
+    async renameConnection(ip, name) {
+        let res = await fetch(url + "/account/connections/rename", {
+            headers: {...this.getHeaders(), "ip": ip, "name": name},
+        })
+    }
 }

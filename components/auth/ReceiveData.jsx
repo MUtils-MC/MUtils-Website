@@ -16,7 +16,7 @@ export function loadData(token, callback) {
         LoginDataCache.avatar = data["avatar"]
         LoginDataCache.banner = data["banner"]
         LoginDataCache.email = data["email"]
-        LoginDataCache.key = data["key"]
+        LoginDataCache.key = data["mutilsKey"]
         callback()
     })
 

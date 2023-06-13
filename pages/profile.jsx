@@ -38,7 +38,7 @@ function Downloads() {
             if (LoginDataCache.id === null) {
                 return
             }
-            setProfileManager(new ProfileManager("KEY", LoginDataCache.id))
+            setProfileManager(new ProfileManager(LoginDataCache.key, LoginDataCache.id))
         }
     }, [loggedIn]);
 
