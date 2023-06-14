@@ -44,8 +44,7 @@ export default class ProfileManager {
         let res = await fetch(url + "/account/connections/get", {
             headers: this.getHeaders()
         })
-        let data = await res.json()
-        return data
+        return await res.json()
     }
 
     async deleteConnection(ip) {
@@ -58,5 +57,12 @@ export default class ProfileManager {
         let res = await fetch(url + "/account/connections/rename", {
             headers: {...this.getHeaders(), "ip": ip, "name": name},
         })
+    }
+
+    async setMCName(name) {
+        let res = await fetch(url + "/account/update-mc", {
+            headers: {...this.getHeaders(), "name": name},
+        })
+        return await res.status === 202
     }
 }
