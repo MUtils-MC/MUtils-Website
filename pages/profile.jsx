@@ -9,9 +9,11 @@ import LoginDataCache from "../components/auth/LoginDataCache";
 import ProfileManager from "../components/profile/ProfileManager";
 import ConnectionList from "../components/profile/ConnectionList";
 import AccountInfo from "../components/profile/AccountInfo";
+import {useRouter} from "next/navigation";
 
 
 function Downloads() {
+    const { push } = useRouter()
 
     const [loggedIn, setLoggedIn] = useState(undefined);
 
@@ -38,7 +40,7 @@ function Downloads() {
             if (LoginDataCache.id === null) {
                 return
             }
-            setProfileManager(new ProfileManager("TOKEN", LoginDataCache.id))
+            setProfileManager(new ProfileManager(LoginDataCache.key, LoginDataCache.id))
         }
     }, [loggedIn]);
 
@@ -65,35 +67,40 @@ function Downloads() {
     async function fetchConnections() {
         const fetchedConnections = await profileManager.getConnections()
         setConnections(fetchedConnections)
-        console.log(fetchedConnections)
+        console.debug(fetchedConnections)
     }
 
     async function fetchAccountInfo() {
         const fetchedAccountInfo = await profileManager.getAccountInfo()
         setAccountInfo(fetchedAccountInfo)
-        console.log(fetchedAccountInfo)
+        console.debug(fetchedAccountInfo)
     }
 
     function loader(value, children) {
+        function onError() {
+            push("/oauth/login")
+            return <h1 style={{color: "white"}}>Please log in</h1>
+        }
         return (
             value ?
                 children
                 :
                 value == undefined ?
                     <h1 style={{color: "white"}}>Loading...</h1>
-                    :
-                    <h1 style={{color: "white"}}>Please log in</h1>
+                    : onError()
         )
     }
 
     return <>
-        <Navbar current="/profile"/>
-        <TopScreen title="RAW">
+        <Navbar current="/profile" highlight=""/>
+        <TopScreen title="Profile">
             <div className="profile-hero-section">
                 {loader(loggedIn,
                     <>
                         <img className="profile-image"
-                             src={"https://cdn.discordapp.com/avatars/" + LoginDataCache.id + "/" + LoginDataCache.avatar}/>
+                             src={"https://cdn.discordapp.com/avatars/" + LoginDataCache.id + "/" + LoginDataCache.avatar}
+                             style={{boxShadow: '5px 5px 15px 4px #17171a', border: '2px solid snow'}}
+                        />
 
                         <h1 style={{color: "white", fontSize: "2.5rem"}}>Welcome, {LoginDataCache.username}</h1>
                     </>
@@ -105,10 +112,10 @@ function Downloads() {
 
             <div className="profile-section">
                 {loader(accountInfo.key,
-                    <AccountInfo accountInfo={accountInfo}/>
+                    <AccountInfo accountInfo={accountInfo} profileManager={profileManager} update={() => fetchAccountInfo()}/>
                 )}
-                {loader(connections[0],
-                    <ConnectionList connections={connections} profileManager={profileManager}/>
+                {loader(1,
+                    <ConnectionList connections={connections} profileManager={profileManager} update={() => fetchConnections()}/>
                 )}
                 {loader(styles.availableStyles,
                     <StyleList colors={styles} onSelect={(i) => setStyle(i)}/>

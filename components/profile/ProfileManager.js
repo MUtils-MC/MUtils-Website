@@ -1,5 +1,6 @@
-export default class ProfileManager {
+const url = "https://api.mutils.net"
 
+export default class ProfileManager {
     key;
     dcID;
 
@@ -17,7 +18,7 @@ export default class ProfileManager {
     }
 
     async getStyles() {
-        let res = await fetch("http://localhost:8080/account/color/get", {
+        let res = await fetch(url + "/account/color/get", {
             headers: this.getHeaders()
         })
         let data = await res.json()
@@ -25,14 +26,14 @@ export default class ProfileManager {
     }
 
     async setStyle(type) {
-        let res = await fetch("http://localhost:8080/account/color/set", {
+        let res = await fetch(url + "/account/color/set", {
             headers: {...this.getHeaders(), "NewType": type},
         })
     }
 
 
     async getAccountInfo() {
-        let res = await fetch("http://localhost:8080/account/general", {
+        let res = await fetch(url + "/account/general", {
             headers: this.getHeaders()
         })
         let data = await res.json()
@@ -40,17 +41,28 @@ export default class ProfileManager {
     }
 
     async getConnections() {
-        let res = await fetch("http://localhost:8080/account/connections/get", {
+        let res = await fetch(url + "/account/connections/get", {
             headers: this.getHeaders()
         })
-        let data = await res.json()
-        return data
+        return await res.json()
     }
 
     async deleteConnection(ip) {
-        let res = await fetch("http://localhost:8080/account/connections/delete", {
+        let res = await fetch(url + "/account/connections/delete", {
             headers: {...this.getHeaders(), "ip": ip},
         })
     }
 
+    async renameConnection(ip, name) {
+        let res = await fetch(url + "/account/connections/rename", {
+            headers: {...this.getHeaders(), "ip": ip, "name": name},
+        })
+    }
+
+    async setMCName(name) {
+        let res = await fetch(url + "/account/update-mc", {
+            headers: {...this.getHeaders(), "name": name},
+        })
+        return await res.status === 202
+    }
 }

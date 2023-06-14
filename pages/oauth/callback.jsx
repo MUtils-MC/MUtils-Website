@@ -22,10 +22,10 @@ function Callback({token}) {
             LoginDataCache.avatar = null
             LoginDataCache.banner = null
             LoginDataCache.email = null
+            LoginDataCache.key = null
         } else {
             console.info("Received token to process... - " + token)
             localStorage.setItem("dc_token", token)
-            console.info("Storage - " + localStorage.getItem("dc_token"))
             loadData(token, () => { router.push('/profile') })
         }
     }, []);

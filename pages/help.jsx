@@ -46,7 +46,7 @@ function Help() {
                          desc="All MUtils modules are 100% open source! You can contribute features or fixes at any time as long as they follow the code style - github.com/MUtils-MC"
                 />
                 <Spoiler title="Shop / Donation"
-                         desc="We spend countless hours to offer all of this content for your mainly free! You can either buy MUtils-Premium to support us and unlock all premium features or just give us a little donation :) Just click on Premium at the top"
+                         desc="We spend countless hours to offer all of this content for you mainly free! You can either buy MUtils-Premium to support us and unlock all premium features or just give us a little donation :) Just click on Premium at the top"
                 />
             </div>
         </div>

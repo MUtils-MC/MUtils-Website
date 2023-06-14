@@ -1,10 +1,10 @@
 import LoginDataCache from "./LoginDataCache";
 
 export function loadData(token, callback) {
-    httpGetAsync("http://localhost:8080/dc/getData", token, (response) => {
+    httpGetAsync("https://api.mutils.net/dc/getData", token, (response) => {
         console.info("Received account data to process...")
         const data = JSON.parse(response)
-        console.log(data)
+        console.debug(data)
         const id = data["id"]
         if (id == null || id === "null") {
             console.warn("Failed to login!")
@@ -16,7 +16,7 @@ export function loadData(token, callback) {
         LoginDataCache.avatar = data["avatar"]
         LoginDataCache.banner = data["banner"]
         LoginDataCache.email = data["email"]
-        LoginDataCache.key = data["key"]
+        LoginDataCache.key = data["mutilsKey"]
         callback()
     })
 

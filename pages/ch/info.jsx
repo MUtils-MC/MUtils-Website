@@ -33,13 +33,13 @@ function Addons() {
                 <ImageButton bg="/images/banner/challenge-banner.webp" to="/ch/addons" name="Addons"/>
             </div>
 
-            <div className="text-image-box scroller scroller-wait">
-                <div className="box-text">
-                    <span style={{fontWeight: 'bold'}}>Watch our small trailer for a preview!<br/></span>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/W8IqmE2-nbA" title="YouTube video player" frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                </div>
-            </div>
+            {/*<div className="text-image-box scroller scroller-wait">*/}
+            {/*    <div className="box-text">*/}
+            {/*        <span style={{fontWeight: 'bold'}}>Watch our small trailer for a preview!<br/></span>*/}
+            {/*    <iframe width="560" height="315" src="https://www.youtube.com/embed/W8IqmE2-nbA" title="YouTube video player" frameBorder="0"*/}
+            {/*            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
 
             <div className="docs-box">
                 <h2>MUtils Commands & Utilities</h2><br/>

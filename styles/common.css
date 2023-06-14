@@ -370,6 +370,7 @@ div .text-block {
     border-radius: 8px;
     align-items: center;
     transition: .4s, background-position 0s;
+    cursor: pointer;
 }
 
 .shop-item-button:hover {
@@ -421,6 +422,55 @@ div .text-block {
     margin: .5rem 0 .5rem 0;
     padding: .5rem .8rem;
     border-radius: 10px;
+}
+
+.confirm-button {
+    width: 8rem;
+    height: 2rem;
+    background-color: #242526;
+    color: snow;
+    font-weight: bold;
+    border: 2px solid #68B85D;
+    border-radius: 5px;
+    transition: 250ms;
+}
+
+.confirm-button:hover {
+    border-color: #F25956;
+    color: #F25956;
+}
+
+.button-success:hover {
+    border-color: #18b800;
+    color: #68b85d;
+}
+
+.code-block {
+    background-color: #1d1f20;
+    color: #c4eac4;
+    padding: 0.3rem;
+    border-radius: 7px;
+    user-select: text;
+    font-size: medium;
+    font-family: "Consolas", sans-serif;
+    cursor: text;
+}
+
+.input-box {
+    background-color: #242526;
+    border: 2px solid #68B85D;
+    border-radius: 5px;
+    width: 10rem;
+    height: 2rem;
+    color: lightgray;
+    padding: 0.5rem;
+    transition: 150ms;
+}
+
+.input-box:focus {
+    border-color: #18b800;
+    outline: none;
+    color: snow;
 }
 
 details[open] summary ~ * {
