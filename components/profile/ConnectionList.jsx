@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {AiFillDelete, AiFillEdit} from "react-icons/ai";
 import Popup from "reactjs-popup";
 import Link from "next/link";
 
-const ConnectionList = ({connections, profileManager}) => {
-
+const ConnectionList = ({connections, profileManager, update}) => {
     console.debug(connections)
+
     function getName(connection) {
         if (connection.name == null) return (<span style={{fontStyle: 'italic'}}>Unset</span>)
         else return (<span style={{fontWeight: 'bold'}}>{connection.name}</span>)
+    }
+
+    function getDesign() {
+        if (error) return "background-color: red"
     }
 
     function renderConnection(connection) {
@@ -25,14 +29,17 @@ const ConnectionList = ({connections, profileManager}) => {
                     >
                         {close => (<div>
                                 <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '20px', borderBottom: 'snow 1px solid', paddingBottom: '5px'}}>Rename Server</div>
-                                <div style={{margin: '1rem'}}>• Renaming a server helps to organize your connections.<br/>  The name is only visible on your dashboard and not on your server!</div>
+                                <div style={{margin: '1rem'}}>• Renaming a server helps to organize your connections.<br/> The name is only visible on your dashboard and not on your server!</div>
                                 <div style={{margin: '1rem'}}><span>• Current Name: </span>{getName(connection)}</div>
                                 <div style={{display: 'flex', justifyContent: 'center'}}>
                                     <input className="input-box" defaultValue={connection.name} onKeyDown={(e) => {
                                         if (e.key === "Enter" || e.key === "Escape") {
                                             const input = e.target.value
-                                            if (input.length >= 64) e.target.
-                                            profileManager.renameConnection(connection.ip, input).then(r => { close() })
+                                            if (input.length >= 64) return
+                                            else profileManager.renameConnection(connection.ip, input).then(r => {
+                                                close()
+                                                update()
+                                            })
                                         }
                                     }}/>
                                 </div>
@@ -46,12 +53,17 @@ const ConnectionList = ({connections, profileManager}) => {
                         {close => (<div>
                                 <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '20px', borderBottom: 'snow 1px solid', paddingBottom: '5px'}}>Delete Server</div>
                                 <div style={{margin: '1rem'}}>• Do you really want to delete the following Server?<br/>
-                                      All settings will be resettet and all premium features become unavailable!<br/>  Note: You can only delete 3 connections every week!</div>
+                                    All settings will be resettet and all premium features become unavailable!<br/> Note: You can only delete 3 connections every week!
+                                </div>
                                 <div style={{margin: '1rem'}}>• {connection.ip} {connection.name && <span>({connection.name})</span>}</div>
                                 <div style={{display: 'flex', justifyContent: 'center'}}>
                                     <button className="confirm-button" onClick={() => {
-                                        profileManager.deleteConnection(connection.ip).then(r => close())
-                                    }}>Confirm</button>
+                                        profileManager.deleteConnection(connection.ip).then(r => {
+                                            close()
+                                            update()
+                                        })
+                                    }}>Confirm
+                                    </button>
                                 </div>
                             </div>
                         )}

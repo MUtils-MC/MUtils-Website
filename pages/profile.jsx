@@ -9,9 +9,11 @@ import LoginDataCache from "../components/auth/LoginDataCache";
 import ProfileManager from "../components/profile/ProfileManager";
 import ConnectionList from "../components/profile/ConnectionList";
 import AccountInfo from "../components/profile/AccountInfo";
+import {useRouter} from "next/navigation";
 
 
 function Downloads() {
+    const { push } = useRouter()
 
     const [loggedIn, setLoggedIn] = useState(undefined);
 
@@ -75,14 +77,17 @@ function Downloads() {
     }
 
     function loader(value, children) {
+        function onError() {
+            push("/oauth/login")
+            return <h1 style={{color: "white"}}>Please log in</h1>
+        }
         return (
             value ?
                 children
                 :
                 value == undefined ?
                     <h1 style={{color: "white"}}>Loading...</h1>
-                    :
-                    <h1 style={{color: "white"}}>Please log in</h1>
+                    : onError()
         )
     }
 
@@ -107,10 +112,10 @@ function Downloads() {
 
             <div className="profile-section">
                 {loader(accountInfo.key,
-                    <AccountInfo accountInfo={accountInfo}/>
+                    <AccountInfo accountInfo={accountInfo} profileManager={profileManager} update={() => fetchAccountInfo()}/>
                 )}
                 {loader(1,
-                    <ConnectionList connections={connections} profileManager={profileManager}/>
+                    <ConnectionList connections={connections} profileManager={profileManager} update={() => fetchConnections()}/>
                 )}
                 {loader(styles.availableStyles,
                     <StyleList colors={styles} onSelect={(i) => setStyle(i)}/>
