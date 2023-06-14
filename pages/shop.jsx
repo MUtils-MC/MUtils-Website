@@ -72,12 +72,12 @@ function Shop() {
 
 function ShopItem(props) {
     function getText() {
-        if (props.isDono === true) return "Donation Page"
+        if (props.isDono) return "Donation Page"
         else return "Purchase Options"
     }
 
     function getTip() {
-        if (props.isDono === true) return "https://ko-fi.com/miraculixx/tip"
+        if (props.isDono) return "https://ko-fi.com/miraculixx/tip"
         else return  "https://ko-fi.com/s/" + props.kofi
     }
 
