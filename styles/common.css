@@ -439,6 +439,11 @@ div .text-block {
     color: #F25956;
 }
 
+.button-success:hover {
+    border-color: #18b800;
+    color: #68b85d;
+}
+
 .code-block {
     background-color: #1d1f20;
     color: #c4eac4;
