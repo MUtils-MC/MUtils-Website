@@ -4,7 +4,7 @@ export function loadData(token, callback) {
     httpGetAsync("http://localhost:8080/dc/getData", token, (response) => {
         console.info("Received account data to process...")
         const data = JSON.parse(response)
-        console.log(data)
+        console.debug(data)
         const id = data["id"]
         if (id == null || id === "null") {
             console.warn("Failed to login!")

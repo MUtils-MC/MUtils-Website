@@ -67,13 +67,13 @@ function Downloads() {
     async function fetchConnections() {
         const fetchedConnections = await profileManager.getConnections()
         setConnections(fetchedConnections)
-        console.log(fetchedConnections)
+        console.debug(fetchedConnections)
     }
 
     async function fetchAccountInfo() {
         const fetchedAccountInfo = await profileManager.getAccountInfo()
         setAccountInfo(fetchedAccountInfo)
-        console.log(fetchedAccountInfo)
+        console.debug(fetchedAccountInfo)
     }
 
     function loader(value, children) {

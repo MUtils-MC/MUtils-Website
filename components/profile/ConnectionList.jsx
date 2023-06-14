@@ -11,10 +11,6 @@ const ConnectionList = ({connections, profileManager, update}) => {
         else return (<span style={{fontWeight: 'bold'}}>{connection.name}</span>)
     }
 
-    function getDesign() {
-        if (error) return "background-color: red"
-    }
-
     function renderConnection(connection) {
         return (
             <div className="connection-card" key={connection.ip}>
