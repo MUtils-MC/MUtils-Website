@@ -6,7 +6,7 @@ import Popup from "reactjs-popup";
 import Link from "next/link";
 
 function OAuth() {
-    const url = "http://localhost:8080/dc/redirect?app=mutils"
+    const url = "https://api.mutils.net/dc/redirect?app=mutils"
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
 

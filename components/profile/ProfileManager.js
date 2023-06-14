@@ -1,4 +1,4 @@
-const url = "http://localhost:8080"
+const url = "https://api.mutils.net"
 
 export default class ProfileManager {
     key;

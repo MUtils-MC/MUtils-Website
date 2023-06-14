@@ -1,7 +1,7 @@
 import LoginDataCache from "./LoginDataCache";
 
 export function loadData(token, callback) {
-    httpGetAsync("http://localhost:8080/dc/getData", token, (response) => {
+    httpGetAsync("https://api.mutils.net/dc/getData", token, (response) => {
         console.info("Received account data to process...")
         const data = JSON.parse(response)
         console.debug(data)
