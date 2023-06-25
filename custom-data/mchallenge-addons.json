@@ -87,5 +87,26 @@
     "downloads": {
       "modrinth": "https://modrinth.com/plugin/mrandomizer"
     }
+  },
+
+  {
+    "name": "Better Challenges",
+    "description": "This addon adds more randomizer and small other Challenges",
+    "image": "https://cdn-raw.modrinth.com/data/KMJuVI4g/5f83b739bb51c609abdb04a3a54c77e5f49a2dad.png",
+    "loader": "Paper",
+    "banner": null,
+    "authors": [
+      "InvalidJokerDE"
+    ],
+    "version": {
+      "from": "1.18",
+      "to": "1.20.1"
+    },
+    "tags": [
+      "RANDOMIZER"
+    ],
+    "downloads": {
+      "modrinth": "https://modrinth.com/plugin/betterchallenges"
+    }
   }
 ]
