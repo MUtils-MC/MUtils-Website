@@ -28,7 +28,7 @@ const StyleList = ({colors, onSelect}) => {
             </div>
             {/*<h2 className={"connection-header"} style={{margin: '8rem 0 1rem 0'}}>Styles</h2>*/}
             <div className="display-grid" style={{width: "100%"}}>
-                {colors.availableStyles.map(i =>
+                {colors.unlockedStyles.map(i =>
                     <div className={colors.selected === i.type ? "selected-style" : ""}
                          onClick={() => onSelect(i.type)} key={i.name}>
                         <DisplayBox

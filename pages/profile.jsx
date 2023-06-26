@@ -1,16 +1,15 @@
-import {scrollEffect} from "../Components/Effects";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import {scrollEffect} from "../components/Effects";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import React, {useEffect, useState} from "react";
-import StyleList from "../Components/profile/StyleList";
-import TopScreen from "../Components/TopScreen";
+import StyleList from "../components/profile/StyleList";
+import TopScreen from "../components/TopScreen";
 import {loadData} from "../components/auth/ReceiveData";
 import LoginDataCache from "../components/auth/LoginDataCache";
 import ProfileManager from "../components/profile/ProfileManager";
 import ConnectionList from "../components/profile/ConnectionList";
 import AccountInfo from "../components/profile/AccountInfo";
 import {useRouter} from "next/navigation";
-
 
 function Downloads() {
     const { push } = useRouter()
@@ -117,7 +116,7 @@ function Downloads() {
                 {loader(1,
                     <ConnectionList connections={connections} profileManager={profileManager} update={() => fetchConnections()}/>
                 )}
-                {loader(styles.availableStyles,
+                {loader(styles.selected,
                     <StyleList colors={styles} onSelect={(i) => setStyle(i)}/>
                 )}
             </div>

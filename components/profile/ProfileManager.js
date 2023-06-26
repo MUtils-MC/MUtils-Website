@@ -18,10 +18,13 @@ export default class ProfileManager {
     }
 
     async getStyles() {
+        console.log("Requesting styles...")
         let res = await fetch(url + "/account/color/get", {
             headers: this.getHeaders()
         })
         let data = await res.json()
+        console.log("Styles loaded:")
+        console.log(data)
         return data
     }
 
