@@ -7,14 +7,23 @@ import ImageButton from "../../components/ImageButton";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {CommandPart, Select, Spoiler} from "../../components/TextBox";
+import {httpGetAsync} from "../../components/WebAccess";
 
 function Addons() {
-    const [infoBody, setInfoBody] = useState("Unable to load information")
+    const [infoBody, setInfoBody] = useState({"mchallengePreviewYT": "https://www.youtube.com/embed/dQpM0Lkeh5c?controls=0"})
     useEffect(scrollEffect)
 
+    const dataUrl = "https://raw.githubusercontent.com/MUtils-MC/MUtils-Website/master/custom-data/content-links.json"
     useEffect(() => {
-
-    })
+        httpGetAsync(dataUrl, (response) => {
+            try {
+                setInfoBody(JSON.parse(response))
+                console.log(JSON.parse(response))
+            } catch (e) {
+                console.error("Failed to fetch data from " + dataUrl + "! Please contact the support")
+            }
+        })
+    }, [])
 
     return <>
         <Navbar current="/ch/info" highlight="Content "/>
@@ -36,7 +45,7 @@ function Addons() {
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
                     <span style={{fontWeight: 'bold'}}>Watch our latest update trailer!<br/></span>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/W8IqmE2-nbA" title="YouTube video player" frameBorder="0"
+                <iframe width="560" height="315" src={infoBody.mchallengePreviewYT} title="YouTube video player" frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                 </div>
             </div>

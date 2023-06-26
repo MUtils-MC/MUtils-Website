@@ -10,7 +10,7 @@ function Shop() {
 
     return <>
         <Navbar current="/shop"/>
-        <TopScreen title="Support"/>
+        <TopScreen title="Shop"/>
         <div className="main-part">
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
