@@ -10,7 +10,7 @@ import {CommandPart, Select, Spoiler} from "../../components/TextBox";
 import {httpGetAsync} from "../../components/WebAccess";
 
 function Addons() {
-    const [infoBody, setInfoBody] = useState({"mchallengePreviewYT": "https://www.youtube.com/embed/dQpM0Lkeh5c?controls=0"})
+    const [infoBody, setInfoBody] = useState({"mchallengePreviewYT": "https://www.youtube.com/embed/dQpM0Lkeh5c"})
     useEffect(scrollEffect)
 
     const dataUrl = "https://raw.githubusercontent.com/MUtils-MC/MUtils-Website/master/custom-data/content-links.json"
