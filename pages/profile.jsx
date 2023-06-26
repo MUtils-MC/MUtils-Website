@@ -116,7 +116,7 @@ function Downloads() {
                 {loader(1,
                     <ConnectionList connections={connections} profileManager={profileManager} update={() => fetchConnections()}/>
                 )}
-                {loader(styles.availableStyles,
+                {loader(styles.selected,
                     <StyleList colors={styles} onSelect={(i) => setStyle(i)}/>
                 )}
             </div>
