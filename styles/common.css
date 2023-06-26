@@ -229,6 +229,12 @@ div .text-block {
     overflow: hidden;
 }
 
+.challenge-new {
+    border-radius: 15px;
+    border: #18b800 solid 2px;
+    box-shadow: 0 0 15px #18b800;
+}
+
 .display-title {
     color: var(--textColorHover);
     font-weight: bold;
@@ -407,6 +413,13 @@ div .text-block {
     padding: 1rem;
 }
 
+.text-area-short {
+    white-space: nowrap;
+    height: 1rem;
+    resize: none;
+    overflow: hidden;
+}
+
 .text-area:focus {
     outline: none !important;
     box-shadow: 0 0 10px #1d1f20;
@@ -471,6 +484,13 @@ div .text-block {
     border-color: #18b800;
     outline: none;
     color: snow;
+}
+
+.iframe-container iframe{
+    width: 60vw;
+    height: 33vw;
+    max-height: 400px;
+    max-width: 700px;
 }
 
 details[open] summary ~ * {

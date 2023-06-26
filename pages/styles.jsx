@@ -44,18 +44,20 @@ function Styles() {
                     <a href="https://dc.mutils.net" className="text-link" target="_blank">Discord</a>
                     <span>{" or support us by purchasing a licence or using any donating option."}<br/>{"Click on a style to find out how to get it!"}</span>
                 </div>
-                <img className="box-image" alt="MUtils Logo" src="/images/peepers.webp"/>
+                <img className="box-image" alt="MUtils Logo" src="/images/icons/styles.png"/>
             </div>
 
-            {styles.map(i =>
-                <div key={i.name}>
-                    <DisplayBox
-                        key={i.type}
-                        name={i.name} desc={i.desc} tags={null}
-                        imgType={"RAW"} img={getImg(i)}
-                    />
-                </div>
-            )}
+            <div className="display-grid">
+                {styles.map(i =>
+                    <div key={i.name}>
+                        <DisplayBox
+                            key={i.type}
+                            name={i.name} desc={i.desc} tags={null}
+                            imgType={"RAW"} img={getImg(i)}
+                        />
+                    </div>
+                )}
+            </div>
         </div>
         <Footer/>
     </>

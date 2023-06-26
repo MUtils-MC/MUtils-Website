@@ -45,9 +45,11 @@ function Addons() {
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
                     <span style={{fontWeight: 'bold'}}>Watch our latest update trailer!<br/></span>
-                <iframe width="560" height="315" src={infoBody.mchallengePreviewYT} title="YouTube video player" frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                </div>
+                    <div className="iframe-container">
+                        <iframe src={infoBody.mchallengePreviewYT + "?vq=hd1080&rel=0&color=white"} title="" frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    </div>
+                    </div>
             </div>
 
             <div className="docs-box">

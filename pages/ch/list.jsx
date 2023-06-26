@@ -7,6 +7,7 @@ import DisplayBox from "../../components/DisplayBox";
 import Tags from "../../components/Variables/Tags";
 import Popup from "reactjs-popup";
 import {httpGetAsync} from "../../components/WebAccess";
+import {event} from "next/dist/build/output/log";
 
 const yaml = require('js-yaml');
 const dataUrl = "https://raw.githubusercontent.com/MiraculixxT/MUtils/master/challenges/data/challenges.json"
@@ -15,6 +16,7 @@ const langUrl = "https://raw.githubusercontent.com/MiraculixxT/MUtils/master/cha
 function List() {
     const [challengePanels, setChallengePanels] = useState([]);
     const [languageData, setLanguageData] = useState([]);
+    const [filter, setFilter] = useState("")
 
     useEffect(scrollEffect);
 
@@ -48,7 +50,7 @@ function List() {
         if (data == null || data.isEmpty || lang == null || lang["items"] == null)
             return <DisplayBox name="Unknown" desc="Failed to load List!"/>
         const langData = lang["items"]["ch"]
-        return data.map(function (entry) {
+        const dataArray = data.map(function (entry) {
             const icon = entry["icon"]
             let image = icon
             let type = "RENDER"
@@ -57,11 +59,15 @@ function List() {
                 type = "URL"
             }
             const key = entry["key"]
+            let highlightClass = ""
+            if (entry["new"] === true) highlightClass = "challenge-new"
             let langItem = langData[key]
             if (langItem == null) langItem = {"n": key, "l": key}
+            if (filter != null && (!langItem.n.includes(filter) && !langItem.l.includes(filter))) return;
             return (<DisplayBox name={langItem["n"]} desc={langItem["l"].replaceAll("<br>", " ")} tags={entry["tags"]}
-                                version={entry["version"]} img={image} imgType={type} key={key}/>)
+                                version={entry["version"]} img={image} imgType={type} key={key} highlight={highlightClass}/>)
         })
+        return dataArray
     }
 
     return <>
@@ -82,6 +88,9 @@ function List() {
                     <span>Each Challenge has Tags (</span><Tag name="FREE"/><span>) to help you finding the best! Hover over them to get more information.<br/>
                     Modifications have special options to change how the challenge work completely. Check them out!</span>
                 </div>
+            </div>
+            <div className="docs-box">
+                <textarea className="text-area text-area-short" placeholder="Search a challenge" maxLength="20" onChange={(e) => setFilter(e.target.value)}/>
             </div>
             <div className="display-grid">
                 {getChallengeBoxes(challengePanels, languageData)}

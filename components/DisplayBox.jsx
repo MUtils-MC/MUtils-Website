@@ -64,7 +64,12 @@ function DisplayBox(props) {
         }
     }, []);
 
-    return <div className="display-container scroller scroller-wait" onClick={() => {
+    function getClasses() {
+        if (props.highlight != null) return "display-container scroller scroller-wait " + props.highlight
+        else return "display-container scroller scroller-wait"
+    }
+
+    return <div className={getClasses()} onClick={() => {
 
     }}>
         <div className="display-title">{props.name}</div>
