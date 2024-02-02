@@ -115,7 +115,7 @@
     "description": "Challenges that are not in MUtils but should be! (D: ~Miraculixx)",
     "image": "https://avatars.githubusercontent.com/u/82610361",
     "loader": "Paper",
-    "banner": null,
+    "banner": "#9840d6",
     "authors": [
       "maxbossing"
     ],
@@ -127,7 +127,7 @@
       "RANDOMIZER"
     ],
     "downloads": {
-      "modrinth": "https://github.com/maxbossing/Custom-Challenges/releases"
+      "github": "https://github.com/maxbossing/Custom-Challenges/releases"
     }
   }
 ]
