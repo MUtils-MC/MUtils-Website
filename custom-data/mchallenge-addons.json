@@ -108,5 +108,26 @@
     "downloads": {
       "modrinth": "https://modrinth.com/plugin/betterchallenges"
     }
+  },
+
+  {
+    "name": "MXChallenges",
+    "description": "Challenges that are not in MUtils but should be! (D: ~Miraculixx)",
+    "image": "https://avatars.githubusercontent.com/u/82610361",
+    "loader": "Paper",
+    "banner": null,
+    "authors": [
+      "maxbossing"
+    ],
+    "version": {
+      "from": "1.20.*",
+      "to": "1.20.*"
+    },
+    "tags": [
+      "RANDOMIZER"
+    ],
+    "downloads": {
+      "modrinth": "https://github.com/maxbossing/Custom-Challenges/releases"
+    }
   }
 ]
