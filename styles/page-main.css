@@ -17,7 +17,8 @@
     position: absolute;
     background-image: url("https://i.imgur.com/J2mdf8T.png");
     z-index: -1;
-    transition: 500ms ease-out;
+    -webkit-transition: 500ms ease-out;
+    background-size: contain;
 }
 
 .main-content {

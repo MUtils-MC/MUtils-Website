@@ -22,7 +22,7 @@ function Tos() {
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
                     <b>Article 1: Distribution</b><br/>
-                    The use and modification of the source code of all modifications from the MUtils project is allowed in a personal context. Selling any content of the MUtils project in any form is prohibited. A sale or share of the license keys for MUtils is forbidden.<br/>
+                    The use and modification of the source code of all modifications from the MUtils project is allowed in a personal context. Selling any content of the MUtils project in any form is prohibited. A sale and/or share of the license keys for MUtils or any restricted files only official available through a purchase is forbidden. (In short - if you payed for it, don't distribute)<br/>
                     <br/>
                     <b>Article 2: Disclaimer</b><br/>
                     To the extent permitted by applicable law, we exclude all representations, warranties and conditions with respect to our Service and the use of this Service. The term "Lifetime" refers to lifetime of the MUtils project.<br/>

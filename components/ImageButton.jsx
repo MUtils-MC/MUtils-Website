@@ -10,7 +10,10 @@ export default function ImageButton(props) {
         setBg("linear-gradient(45deg, rgba(0,0,0,75%), black), url(\""+ props.bg +"\")")
     }
 
-    return <Link className="image-button" href={props.to} style={{backgroundImage: bg}} onPointerEnter={onEnter} onPointerLeave={onLeave} onLoad={() => { window.moveTo(0,0) }} >
+    let classes = "image-button"
+    if (props.highlight) classes += " challenge-new"
+
+    return <Link className={classes} href={props.to} style={{backgroundImage: bg}} onPointerEnter={onEnter} onPointerLeave={onLeave} onLoad={() => { window.moveTo(0,0) }} >
         {props.name}
     </Link>
 }
