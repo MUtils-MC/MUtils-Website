@@ -8,7 +8,7 @@ function Privacy() {
     useEffect(scrollEffect);
 
     return <>
-        <Navbar current="/legal/imprint" />
+        <Navbar current="/legal/imprint"/>
         <TopScreen title="Privacy"/>
         <div className="main-part">
             <div className="text-image-box scroller scroller-wait">
@@ -16,11 +16,12 @@ function Privacy() {
                     In this whole document when being referred as "we" or "us", MUtils Project as a whole is meant with everybody responsible.<br/>
                     When referring to "personal data", your discord profile data (including a linked email address) is meant as well as any information you manually share with any of our services.
                 </div>
-                <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png" />
+                <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png"/>
             </div>
 
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
+                    <span>
                     <h2>Privacy Policy</h2>
                     <p>Personal data (usually referred to just as "data" below) will only be processed by us to the
                         extent necessary and for the purpose of providing a functional and user-friendly website,
@@ -417,6 +418,7 @@ function Privacy() {
                         scientifically recognized mathematical and statistical methods.</p>
                     <p>Xsolla provides further information on the processing described above as well as the applicable
                         data protection regulations.</p>
+                        </span>
                 </div>
             </div>
         </div>

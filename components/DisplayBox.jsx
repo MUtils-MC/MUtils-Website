@@ -44,19 +44,25 @@ function DisplayBox(props) {
             case "URL":
                 setImage(props.img)
                 break
-            case "RENDER":
-                async function imageSetup() {
-                    const res = await fetch("/images/mc/grab/items/" + props.img + ".png")
-                    const ok = res.ok
-                    if (ok) {
-                        setImage("/images/mc/grab/items/" + props.img + ".png")
-                        setImageClass("display-image pixel")
-                    } else {
-                        setImage("/images/mc/grab/rendered/" + props.img + ".png")
-                    }
-                }
-                imageSetup()
+            case "ITEM":
+                setImage("/images/mc/grab/items/" + props.img + ".png")
+                setImageClass("display-image pixel")
                 break
+            case "BLOCK":
+                setImage("/images/mc/grab/rendered/" + props.img + ".png")
+                break
+                // async function imageSetup() {
+                //     const res = await fetch("/images/mc/grab/items/" + props.img + ".png")
+                //     const ok = res.ok
+                //     if (ok) {
+                //         setImage("/images/mc/grab/items/" + props.img + ".png")
+                //         setImageClass("display-image pixel")
+                //     } else {
+                //         setImage("/images/mc/grab/rendered/" + props.img + ".png")
+                //     }
+                // }
+                // imageSetup()
+                // break
             case "RAW":
                 setImage(props.img)
                 break
@@ -65,8 +71,8 @@ function DisplayBox(props) {
     }, []);
 
     function getClasses() {
-        if (props.highlight != null) return "display-container scroller scroller-wait " + props.highlight
-        else return "display-container scroller scroller-wait"
+        if (props.highlight != null) return "display-container " + props.highlight
+        else return "display-container"
     }
 
     return <div className={getClasses()} onClick={() => {

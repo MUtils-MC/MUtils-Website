@@ -4,8 +4,6 @@ import Navbar from "../../components/Navbar";
 import TopScreen from "../../components/TopScreen";
 import Footer from "../../components/Footer";
 import ImageButton from "../../components/ImageButton";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import {CommandPart, Select, Spoiler} from "../../components/TextBox";
 import {httpGetAsync} from "../../components/WebAccess";
 
@@ -31,7 +29,8 @@ function Addons() {
         <div className="main-part">
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
-                    MChallenge is an excellent tool for players who want to take their experience to the next level and makes sure to provide hours of entertainment for players of all skill levels.<br/>
+                    MChallenge is an excellent tool for players who want to take their experience to the next level and makes sure to provide hours of entertainment for players of all skill
+                    levels.<br/>
                     From fun and easy modifications, over stunning world changes to hard challenges. You can find everything!
                 </div>
                 <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png"/>
@@ -39,17 +38,19 @@ function Addons() {
 
             <div className="text-image-box scroller scroller-wait">
                 <ImageButton bg="/images/banner/challenge-banner.webp" to="/ch/list" name="Challenges"/>
-                <ImageButton bg="/images/banner/challenge-banner.webp" to="/ch/addons" name="Addons"/>
+                <ImageButton bg="/images/banner/workshop.webp" to="/ch/addons" name="Addons"/>
             </div>
 
             <div className="text-image-box scroller scroller-wait">
-                <div className="box-text">
-                    <span style={{fontWeight: 'bold'}}>Watch our latest update trailer!<br/></span>
-                    <div className="iframe-container">
-                        <iframe src={infoBody.mchallengePreviewYT + "?vq=hd1080&rel=0&color=white"} title="" frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                <div className="box-text slim">
+                    <div>
+                        <span style={{fontWeight: 'bold'}}>Watch our latest update trailer!<br/></span>
+                        <div className="iframe-container">
+                            <iframe src={infoBody.mchallengePreviewYT + "?vq=hd1080&rel=0&color=white"} title="" frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                        </div>
                     </div>
-                    </div>
+                </div>
             </div>
 
             <div className="docs-box">
@@ -59,7 +60,7 @@ function Addons() {
                          cmd="/challenge [<action>, settings]"
                          perm="mutils.challenge"
                 >
-                    <CommandPart part="*no action*">
+                <CommandPart part="*no action*">
                         <Select>{"Open the setup menu to toggle and modify modifications"}</Select>
                     </CommandPart>
                     <CommandPart part="[<action>]">
@@ -154,7 +155,7 @@ function Addons() {
                 <div style={{padding: '0.5rem 0 0.5rem 0'}}>
                     <Select>MChallenge contains some handy game rules to quickly advance your server to your needs! All custom game rules can be toggled with the following command:</Select>
                 </div>
-                <div style={{backgroundColor: '#1d1f20', padding:  '.3rem', borderRadius: '10px', color: '#68B85D'}}>
+                <div style={{backgroundColor: '#1d1f20', padding: '.3rem', borderRadius: '10px', color: '#68B85D'}}>
                     <Select>{"/rule <rule> <value>"}</Select><br/>
                 </div>
                 <div style={{padding: '0.5rem 0 0 1rem'}}>
@@ -165,7 +166,7 @@ function Addons() {
                 </div>
             </div>
         </div>
-        <Footer />
+        <Footer/>
     </>
 }
 

@@ -12,9 +12,13 @@ export default function ImageButton(props) {
 
     let classes = "image-button"
     if (props.highlight) classes += " challenge-new"
+    if (props.scratch) classes += " image-button-scratch"
+    if (props.slim) classes += " image-button-slim"
 
     return <Link className={classes} href={props.to} style={{backgroundImage: bg}} onPointerEnter={onEnter} onPointerLeave={onLeave} onLoad={() => { window.moveTo(0,0) }} >
-        {props.name}
+        <div className="image-button-text">
+            {props.name}
+        </div>
     </Link>
 }
 
@@ -31,7 +35,12 @@ export function ImageButtonLink(props) {
         else return ""
     }
 
-    return <a className="image-button"
+    let classes = "image-button"
+    if (props.highlight) classes += " challenge-new"
+    if (props.scratch) classes += " image-button-scratch"
+    if (props.slim) classes += " image-button-slim"
+
+    return <a className={classes}
               target={props.target}
               rel={getTarget()}
               href={props.to}
@@ -40,6 +49,8 @@ export function ImageButtonLink(props) {
               onPointerLeave={onLeave}
               onLoad={() => { window.moveTo(0,0) }}
     >
-        {props.name}
+        <div className="image-button-text">
+            {props.name}
+        </div>
     </a>
 }

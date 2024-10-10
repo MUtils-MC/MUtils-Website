@@ -73,6 +73,7 @@ a {
 /* Icon Button */
 .icon-button {
     --button-size: calc(var(--nav-size) * 0.5);
+    font-family: "Segoe UI", sans-serif;
     color: snow;
     border-radius: 7%;
     padding: 10px;
@@ -93,7 +94,7 @@ a {
     color: var(--textColorHover);
 }
 
-.icon-button:hover {
+.menu-item:hover svg {
     filter: brightness(1.2);
     color: var(--textColorHover);
 }

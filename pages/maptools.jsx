@@ -3,7 +3,7 @@ import {scrollEffect} from "../components/Effects";
 import Navbar from "../components/Navbar";
 import TopScreen from "../components/TopScreen";
 import Footer from "../components/Footer";
-import ImageButton from "../components/ImageButton";
+import ImageButton, {ImageButtonLink} from "../components/ImageButton";
 import {CommandPart, Select, Spoiler} from "../components/TextBox";
 
 function Addons() {
@@ -28,8 +28,8 @@ function Addons() {
             </div>
 
             <div className="text-image-box scroller scroller-wait">
-                <ImageButton bg="/images/banner/maptools.webp" to="https://modrinth.com/mod/mweb" target="_blank" name="Free"/>
-                <ImageButton bg="/images/banner/maptools.webp" to="https://ko-fi.com/s/416280fb97" target="_blank" name="Full Access" highlight={true}/>
+                <ImageButtonLink bg="/images/banner/maptools.webp" to="https://modrinth.com/mod/mweb" target="_blank" name="Download"/>
+                <ImageButton bg="/images/banner/maptools.webp" to="/shop" name="Premium" highlight={true}/>
             </div>
 
             <div className="docs-box">
@@ -96,6 +96,8 @@ function Addons() {
                          perm="<none>"
                          cmd="/resourcepack <...>"
                 />
+                .<br/>.<br/>.<br/>Missing documentation will follow soon!<br/>
+                All modules can be viewed on the Modrinth page.
             </div>
 
         </div>

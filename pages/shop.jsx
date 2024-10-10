@@ -4,6 +4,7 @@ import TopScreen from "../components/TopScreen";
 import React, {useEffect} from "react";
 import Popup from "reactjs-popup";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 function Shop() {
     useEffect(scrollEffect);
@@ -14,56 +15,57 @@ function Shop() {
         <div className="main-part">
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
-                    MUtils is 100% community based and only survive through support from you!<br/>
-                    Despite ongoing server costs, we decided against a subscription system. That's why we are happy about every extra support to keep this project alive!<br/>
-                    Currently, MUtils is in BETA and some features may not be implemented at the current time. Enjoy!<br/>
+                    <div>
+                        MUtils is 100% community based and only survive through support from you!<br/>
+                        Despite ongoing server costs, we decided against a subscription system. That's why we are happy about every extra support to keep this project alive!<br/>
+                        Currently, MUtils is in BETA and some features may not be implemented at the current time. Enjoy!<br/>
+                        <b>▪ <Link className={"text-link"} href={"/premium"}>Read more about Premium</Link> ▪</b>
+                    </div>
                 </div>
             </div>
-            <div className="display-grid">
+            <div className="display-grid-small">
                 <ShopItem name="MUtils Lite" image="/images/icons/mutils-lite.png" kofi="f018432bf2">
-                    <ShopItemPerk name="Lifetime MUtils Premium" is={1} desc="You will recieve a permanent MUtils-Lite licence to use MUtils-Premium content"/>
-                    <ShopItemPerk name="All Challenges" is={1} desc="Available List from MUtils-List"/>
-                    <ShopItemPerk name="All Utilities" is={1} desc="Variouse utils from all MUtils products"/>
+                    <ShopItemPerk name="Lifetime MUtils Lite" is={1} desc="You will recieve a permanent MUtils-Lite licence for your account"/>
+                    <ShopItemPerk name="All Challenges" is={1} desc="Access to all Challenges in MChallenge"/>
+                    <ShopItemPerk name="All Map Tools" is={1} desc="Access to all commands and tools in MapTools"/>
                     <ShopItemPerk name="Timer-Design Workshop" is={1} desc="Upload & download timer designs from the public workshop (MUtils-Timer)"/>
-                    <ShopItemPerk name="World-Preset Workshop" is={1} desc="Upload & download world presets from the public workshop (MUtils-Worlds)"/>
-                    <ShopItemPerk name="Privat Data Sync" is={1} desc="Upload & download privat configurations like timer designs from your personal MUtils-Cloud"/>
                     <ShopItemPerk name="Auto Updater" is={1} desc="MUtils automaticly scans for updates and install them on restart"/>
-                    <ShopItemPerk name="Addon Highlighting" is={3}/>
-                    <ShopItemPerk name="Beta Content" is={3}/>
-                    <ShopItemPerk name="Extra Support" is={3}/>
+                    <ShopItemPerk name="MLog Upgrade" is={3} desc="More projects & higher traffic limits per guild & project in MLog"/>
+                    <ShopItemPerk name="Addon Highlighting" is={3} desc="Your published MUtils addons will be highlighted in the workshop & homepage"/>
+                    <ShopItemPerk name="Beta Content" is={3} desc="Use beta content that may or may not be published - Not always available"/>
+                    <ShopItemPerk name="Extra Support" is={3} desc="Most of all revenue flows directly in our servers - Thank you for all support!"/>
 
                     <ShopItemPerk name="2 Servers" is={2} desc="You can activate Premium on two unique servers"/>
                     <ShopItemPerk name="" is={4}/>
                 </ShopItem>
                 <ShopItem name="MUtils Ultimate" image="/images/icons/mutils500.png" kofi="34a67861f1">
-                    <ShopItemPerk name="Lifetime MUtils Premium" is={1} desc="You will recieve a permanent MUtils-Ultimate licence to use MUtils-Premium content"/>
-                    <ShopItemPerk name="All Challenges" is={1} desc="Available List from MUtils-List"/>
-                    <ShopItemPerk name="All Utilities" is={1} desc="Variouse utils from all MUtils products"/>
+                    <ShopItemPerk name="Lifetime MUtils Lite" is={1} desc="You will recieve a permanent MUtils-Lite licence for your account"/>
+                    <ShopItemPerk name="All Challenges" is={1} desc="Access to all Challenges in MChallenge"/>
+                    <ShopItemPerk name="All Map Tools" is={1} desc="Access to all commands and tools in MapTools"/>
                     <ShopItemPerk name="Timer-Design Workshop" is={1} desc="Upload & download timer designs from the public workshop (MUtils-Timer)"/>
-                    <ShopItemPerk name="World-Preset Workshop" is={1} desc="Upload & download world presets from the public workshop (MUtils-Worlds)"/>
-                    <ShopItemPerk name="Privat Data Sync" is={1} desc="Upload & download privat configurations like timer designs from your personal MUtils-Cloud"/>
                     <ShopItemPerk name="Auto Updater" is={1} desc="MUtils automaticly scans for updates and install them on restart"/>
-                    <ShopItemPerk name="Addon Highlighting" is={1} desc="Your published MUtils addons will be highlighted in the workshop"/>
+                    <ShopItemPerk name="MLog Upgrade" is={1} desc="More projects & higher traffic limits per guild & project in MLog"/>
+                    <ShopItemPerk name="Addon Highlighting" is={1} desc="Your published MUtils addons will be highlighted in the workshop & homepage"/>
                     <ShopItemPerk name="Beta Content" is={1} desc="Use beta content that may or may not be published - Not always available"/>
                     <ShopItemPerk name="Extra Support" is={1} desc="Most of all revenue flows directly in our servers - Thank you for all support!"/>
 
                     <ShopItemPerk name="5 Servers" is={2} desc="You can activate Premium on five unique servers"/>
-                    <ShopItemPerk name="Single Player" is={2} desc="You can activate Premium in Single-Player worlds (may not be available for all content)"/>
+                    {/*<ShopItemPerk name="Single Player" is={2} desc="Use some MUtils features in single player via DataPacks or mods. Currently also usable without Premium"/>*/}
                 </ShopItem>
-                <ShopItem name="Extra Support" image="/images/icons/mutils-extra.png" kofi="34a67861f1" isDono={true}>
-                    <ShopItemPerk name="Voluntary Donation" is={1} desc="Donations will not grant any extra perks but we appreciate any support <3"/>
-                    <ShopItemPerk name="Extra Support" is={1} desc="Most of all revenue flows directly in our servers - Thank you for all support!"/>
-                    <ShopItemPerk name="Leaderboard Entry" is={1} desc="All donations will be added to the supporter leaderboard. It's not a competition!"/>
-                    <ShopItemPerk name="" is={4}/>
-                    <ShopItemPerk name="" is={4}/>
-                    <ShopItemPerk name="" is={4}/>
-                    <ShopItemPerk name="" is={4}/>
-                    <ShopItemPerk name="" is={4}/>
-                    <ShopItemPerk name="" is={4}/>
-                    <ShopItemPerk name="" is={4}/>
-                    <ShopItemPerk name="" is={4}/>
-                    <ShopItemPerk name="" is={4}/>
-                </ShopItem>
+                {/*<ShopItem name="Extra Support" image="/images/icons/mutils-extra.png" kofi="34a67861f1" isDono={true}>*/}
+                {/*    <ShopItemPerk name="Voluntary Donation" is={1} desc="Donations will not grant any extra perks but we appreciate any support <3"/>*/}
+                {/*    <ShopItemPerk name="Extra Support" is={1} desc="Most of all revenue flows directly in our servers - Thank you for all support!"/>*/}
+                {/*    <ShopItemPerk name="Leaderboard Entry" is={1} desc="All donations will be added to the supporter leaderboard. It's not a competition!"/>*/}
+                {/*    <ShopItemPerk name="" is={4}/>*/}
+                {/*    <ShopItemPerk name="" is={4}/>*/}
+                {/*    <ShopItemPerk name="" is={4}/>*/}
+                {/*    <ShopItemPerk name="" is={4}/>*/}
+                {/*    <ShopItemPerk name="" is={4}/>*/}
+                {/*    <ShopItemPerk name="" is={4}/>*/}
+                {/*    <ShopItemPerk name="" is={4}/>*/}
+                {/*    <ShopItemPerk name="" is={4}/>*/}
+                {/*    <ShopItemPerk name="" is={4}/>*/}
+                {/*</ShopItem>*/}
             </div>
         </div>
         <Footer/>
@@ -78,7 +80,7 @@ function ShopItem(props) {
 
     function getTip() {
         if (props.isDono) return "https://ko-fi.com/miraculixx/tip"
-        else return  "https://ko-fi.com/s/" + props.kofi
+        else return "https://ko-fi.com/s/" + props.kofi
     }
 
     return <div className="shop-item scroller scroller-wait">

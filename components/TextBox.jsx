@@ -1,9 +1,13 @@
 import React from "react";
 
 export function Spoiler(props) {
-    return <details className="docs-spoiler">
-        <summary style={{fontWeight: "bold", cursor: 'pointer'}}>{props.title}</summary>
-        <div style={{margin: '.4rem 1rem .2rem 1rem'}}>
+    return <div className="docs-spoiler-box">
+        <details className="docs-spoiler">
+            <summary style={{fontWeight: "bold", cursor: 'pointer'}}>
+                <span>{"• " + props.title}</span>
+            </summary>
+        </details>
+        <div className="docs-spoiler-element" style={{margin: '.4rem 1rem .2rem 1rem'}}>
             <Select>{props.desc}<br/> <br/></Select>
             {props.cmd != null &&
                 <div style={{backgroundColor: '#17171a', padding: '.3rem', borderRadius: '10px', color: '#68B85D'}}>
@@ -18,7 +22,7 @@ export function Spoiler(props) {
                 </div>
             }
         </div>
-    </details>
+    </div>
 }
 
 export function CommandPart(props) {

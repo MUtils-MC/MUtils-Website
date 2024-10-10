@@ -3,7 +3,7 @@ import {scrollEffect} from "../components/Effects";
 import Navbar from "../components/Navbar";
 import TopScreen from "../components/TopScreen";
 import Footer from "../components/Footer";
-import ImageButton from "../components/ImageButton";
+import ImageButton, {ImageButtonLink} from "../components/ImageButton";
 import {CommandPart, Select, Spoiler} from "../components/TextBox";
 
 function Addons() {
@@ -29,7 +29,7 @@ function Addons() {
             </div>
 
             <div className="text-image-box scroller scroller-wait">
-                <ImageButton bg="/images/banner/mweb.webp" to="https://modrinth.com/mod/mweb" target="_blank" name="Modrinth"/>
+                <ImageButtonLink bg="/images/banner/mweb.webp" to="https://modrinth.com/mod/mweb" target="_blank" name="Modrinth"/>
             </div>
 
             <div className="docs-box">

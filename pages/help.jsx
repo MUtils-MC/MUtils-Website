@@ -14,9 +14,12 @@ function Help() {
         <div className="main-part">
             <div className="text-image-box scroller scroller-wait">
                 <div className="box-text">
-                    <span>We try to cover the most common questions in this section.<br/> If you need further help, please contact us at the </span>
-                    <a href="https://dc.mutils.net" className="text-link" target="_blank">MCreate Discord</a>
-                    <span>{" or ask the community there."}<br/>{"Click on the boxes below the question to see the answer."}</span>
+                    <span>
+                        {"We try to cover the most common questions in this section."}<br/>
+                        {" If you need further help, please contact us at the "}
+                        <a href="https://dc.mutils.net" className="text-link" target="_blank">MCreate Discord</a>
+                        {" or ask the community there."}<br/>{"Click on the boxes below the question to see the answer."}
+                    </span>
                 </div>
                 <img className="box-image" alt="MUtils Logo" src="/images/icons/mutils500.png"/>
             </div>

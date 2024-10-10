@@ -1,12 +1,13 @@
 import ArrowDownIcon from "./Images/carvet.svg"
 import CraftingTableIcon from "./Images/crafting-icon.svg"
-import WorldCreatorIcon from "./Images/world-icon.svg"
 import EarthIcon from "./Images/earth.svg"
 import ClockIcon from "./Images/clock.svg"
 import DiscordIcon from "./Images/discord.svg"
 import QuestionIcon from "./Images/question_mark.svg"
 import CogIcon from "./Images/cog.svg"
 import LogOutIcon from "./Images/logout.svg"
+import Veinminer from "./Images/pickaxe.svg"
+import Map from "./Images/map.svg"
 
 import React, {useEffect, useRef, useState} from 'react'
 import LoginDataCache from "./auth/LoginDataCache";
@@ -69,10 +70,12 @@ function Navbar(props) {
                     <NavItem title="Premium" to="/shop" current={props.current}/>
                     <NavItem title="Content " iconRight={<ArrowDownIcon/>} current={props.current} highlight={props.highlight}>
                         <DropdownMenu>
-                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/ch/info" current={props.current}>MChallenges</DropdownItem>
-                            <DropdownItem leftIcon={<ClockIcon/>} to="/timer" current={props.current}>MTimer</DropdownItem>
-                            <DropdownItem leftIcon={<WorldCreatorIcon/>} to="/world" current={props.current}>MWorld</DropdownItem>
+                            <DropdownItem leftIcon={<CraftingTableIcon/>} to="/ch/info" current={props.current}>Challenges</DropdownItem>
+                            <DropdownItem leftIcon={<ClockIcon/>} to="/timer" current={props.current}>Timer</DropdownItem>
+                            <DropdownItem leftIcon={<Veinminer/>} to="/veinminer" current={props.current}>Veinminer</DropdownItem>
+                            <DropdownItem leftIcon={<Map/>} to="/maptools" current={props.current}>Map Tools</DropdownItem>
                             <DropdownItem leftIcon={<EarthIcon/>} to="/mweb" current={props.current}>MWeb</DropdownItem>
+                            <DropdownItem leftIcon={<EarthIcon/>} to="/mlog" current={props.current}>MLog</DropdownItem>
                         </DropdownMenu>
                     </NavItem>
                     <NavItem title="More " iconRight={<ArrowDownIcon/>} current={props.current} highlight={props.highlight}>
