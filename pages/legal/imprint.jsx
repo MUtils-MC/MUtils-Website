@@ -384,40 +384,6 @@ function Imprint() {
                     <p><a href="https://adssettings.google.com/authenticated" target="_blank"
                           rel="noopener">https://adssettings.google.com/authenticated</a></p>
                     <p>in particular on options for preventing the use of data.</p>
-                    <h4>XSOLLA „CHECK-OUT“</h4>
-                    <p>To process orders through our online shop, we use the payment service of Xsolla Berlin GmbH,
-                        Mindspace, Krausenstraße 9-10 10117 Berlin, Germany referred to as "Xsolla", on our website.</p>
-                    <p>For this purpose, we have integrated Xsolla's check-out into the final order page of our online
-                        shop.</p>
-                    <p>The legal basis is the fulfilment of the contract according to Art. 6 Para. 1 lit. b.)&nbsp; EU
-                        General Data Protection Regulation (GDPR). In addition, we have a legitimate interest in
-                        offering effective and secure payment options, so that another legal basis ensues from Art. 6
-                        para. 1 lit f.) GDPR.&nbsp;</p>
-                    <p>By integrating Xsolla, your internet browser loads the check-out page from a Xsolla server. This
-                        means that the operating system you are using, type and version of your Internet browser,
-                        website from which the check-out has been requested, date and time of the call and the IP
-                        address are sent to Xsolla - even without your interaction with the check-out page.</p>
-                    <p>As soon as you complete the order in our online shop, the data you have entered in the input
-                        fields of the check-out page will be processed by Xsolla at your own responsibility in order to
-                        process the payment.</p>
-                    <p>With the offered payment methods "PayPal" and "Advance Payment", processing without your further
-                        consent is limited to the transfer of the payment data to us or PayPal.</p>
-                    <p>With the offered payment methods of "Purchase on Account", "Hire Purchase", "Credit Card",
-                        "Direct Debit" or "Immediate Payment", the following personal data is processed by Xsolla for
-                        the purpose of payment processing and for identity and credit checking:</p>
-                    <p>- Contact information such as names, addresses, date of birth, gender, email address, telephone
-                        number, mobile phone number, IP address, etc.</p>
-                    <p>- Information on the processing of the order, such as product type, product number, price,
-                        etc.</p>
-                    <p>- Payment information, such as debit and credit card data (card number, expiry date and CCV
-                        code), invoice data, account number, etc.</p>
-                    <p>If you choose the payment method "Purchase on Account" or "Hire Purchase", Xsolla collects and
-                        uses personal data and information about your previous payment behaviour to decide whether you
-                        will be granted the desired payment method. In addition, probability values for your future
-                        payment behaviour (so-called scoring) are used. Scoring is calculated on the basis of
-                        scientifically recognized mathematical and statistical methods.</p>
-                    <p>Xsolla provides further information on the processing described above as well as the applicable
-                        data protection regulations.</p>
                         </span>
                 </div>
             </div>
